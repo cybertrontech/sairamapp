@@ -10,7 +10,7 @@ class NavigationDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Material(
-        color:Colors.black,
+        color: Colors.black,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(24.0, 80, 24, 0),
           child: Column(
@@ -41,15 +41,17 @@ class NavigationDrawer extends StatelessWidget {
               DrawerItem(
                   name: 'My Playlist',
                   icon: Icons.playlist_add_check_outlined,
-                  onPressed: () => onItemPressed(context, index: 2)),  const SizedBox(
+                  onPressed: () => onItemPressed(context, index: 2)),
+              const SizedBox(
                 height: 5,
               ),
               DrawerItem(
                   name: 'Settings',
                   icon: Icons.settings,
                   onPressed: () => onItemPressed(context, index: 3)),
+
               const SizedBox(
-                height: 5,
+                height: 6,
               ),
               DrawerItem(
                   name: 'About Us',
@@ -64,7 +66,13 @@ class NavigationDrawer extends StatelessWidget {
               //     onPressed: () => onItemPressed(context, index: 5)),
               Padding(
                 padding: const EdgeInsets.only(right: 180),
-                child: Text("Logout",style: TextStyle(color: subtext,fontSize: 21,fontWeight: FontWeight.bold),),
+                child: Text(
+                  "Logout",
+                  style: TextStyle(
+                      color: subtext,
+                      fontSize: 21,
+                      fontWeight: FontWeight.bold),
+                ),
               )
             ],
           ),
@@ -98,12 +106,16 @@ class NavigationDrawer extends StatelessWidget {
             height: 3,
           ),
           Text('Kripas Khatiwada',
-              style: TextStyle(fontSize: 20,fontWeight: FontWeight.w800, color: Colors.white)),
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white)),
           SizedBox(
             height: 8,
           ),
           Text('+9779860486269',
-              style: TextStyle(fontSize: 15,fontWeight: FontWeight.w800, color: subtext))
+              style: TextStyle(
+                  fontSize: 15, fontWeight: FontWeight.w800, color: subtext))
         ],
       ),
     );
