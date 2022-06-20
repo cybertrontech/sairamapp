@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:tunesevenui/screen/login%20and%20signup/utils/textfeild.dart';
+import 'package:http/http.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tunesevenui/screen/login%20and%20signup/utils/textfield.dart';
 
 import '../../Homepages/navigation_menu.dart';
 import '../../colors/all colors.dart';
@@ -26,8 +30,8 @@ class _LoginpageState extends State<Loginpage> {
 // TextFormField
   bool hidePassword = true;
 
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   final phoneContoller = TextEditingController();
   String email = '';
   final formKey = GlobalKey<FormState>();
@@ -52,6 +56,26 @@ class _LoginpageState extends State<Loginpage> {
       }
     }
   }
+void login(String email,password)async{
+    try{
+      Response response =await post(
+      Uri.parse('https://reqres.in/api/login'),
+        body: {
+        'email':email,
+          'password':password
+        }
+      );
+      if(response.statusCode==200){
+        var data = jsonDecode(response.body.toString());
+        print(data['token']);
+        print('account created successfully');
+      }else{
+        print('false');
+      }
+    }catch(e){
+      print(e.toString());
+    }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -94,6 +118,7 @@ class _LoginpageState extends State<Loginpage> {
                           ),
                           SizedBox(height: 30),
                           CommonTextField(
+
                             focusNode: emailFocus,
                             controller: emailController,
                             keyboardType: TextInputType.emailAddress,
@@ -184,6 +209,8 @@ class _LoginpageState extends State<Loginpage> {
                           ),
                           MaterialButton(
                             onPressed: () {
+                              login(emailController.text.toString(),
+                                  passwordController.text.toString());
                                Navigator.push(
                                  context,
                                  MaterialPageRoute(

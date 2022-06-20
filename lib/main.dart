@@ -33,9 +33,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(backgroundColor: Colors.black),
-      //    initialRoute: "/",
-      // onGenerateRoute: ourRouteGenerator,
+         theme: ThemeData(backgroundColor: Colors.black),
+         initialRoute: "/",
+         onGenerateRoute: ourRouteGenerator,
       home:HomePage(),
     );
 

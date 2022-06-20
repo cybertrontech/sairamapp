@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 class CommonTextField extends StatelessWidget {
   const CommonTextField(
       {Key? key,
-      required this.controller,
-      this.obscureText = false,
-      this.validator,
-      this.hintText = "",
-      this.suffixIcon,
-      this.focusNode,
-      this.textInputAction = TextInputAction.next,
-      this.keyboardType = TextInputType.text,
-      this.prefixIcon})
+        required this.controller,
+        this.obscureText = false,
+        this.validator,
+        this.hintText = "",
+        this.suffixIcon,
+        this.focusNode,
+        this.textInputAction = TextInputAction.next,
+        this.keyboardType = TextInputType.text,
+        this.prefixIcon})
       : super(key: key);
 
   final TextEditingController controller;
