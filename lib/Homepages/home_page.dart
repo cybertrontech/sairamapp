@@ -25,14 +25,7 @@ class _HomePageState extends State<HomePage> {
     Store(),
 
   ];
-  // final List<String> imglist = [
-  //   artist1,
-  //   artist2,
-  //   artist3,
-  //   artist4,
-  //   artist5,
-  //   artist6
-  // ];
+
 
   @override
   Widget build(BuildContext context) {
