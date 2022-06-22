@@ -227,7 +227,7 @@ class _LoginpageState extends State<testlogin> {
                                   );
                                 },
                                 child: Text(
-                                  ' Register',
+                                  ' Registe',
                                   style: TextStyle(
                                       fontSize: 15,
                                       color: Colors.blue,

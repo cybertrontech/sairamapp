@@ -86,7 +86,6 @@ void login(String email,password)async{
         child: Column(
           children: [
             Image.asset(tune7logoweb,width: 120,height: 140,),
-
             Padding(
               padding: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height /120,
