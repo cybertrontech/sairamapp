@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tunesevenui/screen/login%20and%20signup/loginpage.dart';
 import 'package:tunesevenui/screen/login%20and%20signup/textlogin.dart';
 
 import '../../Homepages/navigation_menu.dart';
@@ -48,7 +47,6 @@ class _HomePageState extends State<Signup> {
         child: Column(
           children: [
             // Image.asset(tune7logoweb,width: 120,height: 140,),
-
             Padding(
               padding: EdgeInsets.only(
                 top:50,
@@ -63,7 +61,6 @@ class _HomePageState extends State<Signup> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(40),
                     ),
-
                     margin: const EdgeInsets.symmetric(horizontal: 35),
                     child: Padding(
                       padding: const EdgeInsets.all(20),
@@ -190,7 +187,7 @@ class _HomePageState extends State<Signup> {
                                         onTap: (){
                                           Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) => const testlogin()),
+                                            MaterialPageRoute(builder: (context) =>  testlogin()),
                                           );                                    },
                                         child: Text(
                                           ' Login',

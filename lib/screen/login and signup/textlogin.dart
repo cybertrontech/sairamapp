@@ -5,13 +5,13 @@ import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tunesevenui/screen/login%20and%20signup/utils/textfield.dart';
 
+import '../../Homepages/home_page.dart';
 import '../../Homepages/navigation_menu.dart';
 import '../../colors/all colors.dart';
 import '../../images/all img.dart';
 import 'Signup.dart';
 
 class testlogin extends StatefulWidget {
-  const testlogin({Key? key}) : super(key: key);
 
   @override
   State<testlogin> createState() => _LoginpageState();
@@ -31,36 +31,50 @@ class _LoginpageState extends State<testlogin> {
       Map<String, String> body = {
         'email': "yugalkhati570@gmail.com",
         'password': "1234"
+
       };
       Response response = await post(
           Uri.parse('https://sairambackend.herokuapp.com/login'),
           body: jsonEncode(body),
           headers: {"Content-Type": "application/json"});
       if (response.statusCode == 200) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.cyan,content: Text("SUCCESS YOUR LOGIN IS SUCCESSFULL WAIT A MIN}",
+          style: TextStyle(
+              color: Colors.black
+          ),
+        )
+        ));
         var data = jsonDecode(response.body.toString());
         print(data['token']);
+
         print('account created successfully');
-      } else {
-        print('false');
-      }
+        Future.delayed(Duration(seconds: 4),(){
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
+        });
+      };
     } catch (e) {
       print(e.toString());
-    }
-    final bool? isValid = _formKey.currentState?.validate();
-    if (isValid == true) {
-      debugPrint('Everything looks good!');
-      debugPrint(_userEmail);
-      debugPrint(_userName);
-      debugPrint(_password);
-      debugPrint(_confirmPassword);
-
-      /*
-      Continute proccessing the provided information with your own logic
-      such us sending HTTP requests, savaing to SQLite database, etc.
-      */
-
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.blue,
+              content: Text("username or password is inncorrect",
+        style: TextStyle(
+            color: Colors.black
+        ),
+      )));
     }
   }
+  //   final bool? isValid = _formKey.currentState?.validate();
+  //   if (isValid == true) {
+  //     debugPrint('Everything looks good!');
+  //     debugPrint(_userEmail);
+  //     debugPrint(_userName);
+  //     debugPrint(_password);
+  //     debugPrint(_confirmPassword);
+  //   }
+  // }
+  TextEditingController emailController = TextEditingController(text: "yugal");
+  TextEditingController passwordController = TextEditingController(text: "1234");
 
   @override
   Widget build(BuildContext context) {
@@ -107,6 +121,7 @@ class _LoginpageState extends State<testlogin> {
                               child: Column(
                             children: [
                               TextFormField(
+                                controller: emailController,
                                 decoration: const InputDecoration(
                                     border: OutlineInputBorder(),
                                     prefixIcon: Icon(Icons.email),
@@ -129,6 +144,7 @@ class _LoginpageState extends State<testlogin> {
                                 height: 15,
                               ),
                               TextFormField(
+                                controller: passwordController,
                                 decoration: const InputDecoration(
                                     border: OutlineInputBorder(),
                                     prefixIcon: Icon(Icons.lock),

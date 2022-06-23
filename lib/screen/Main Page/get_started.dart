@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tunesevenui/images/all%20img.dart';
+import 'package:tunesevenui/screen/login%20and%20signup/textlogin.dart';
 
 import '../../colors/all colors.dart';
-import '../login and signup/loginpage.dart';
 
 
 class GetStarted extends StatefulWidget {
@@ -143,7 +143,7 @@ class _GetStartedState extends State<GetStarted> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const Loginpage()),
+                                      builder: (context) =>  testlogin()),
                                 );
                               },
                               color: Colors.blue,
