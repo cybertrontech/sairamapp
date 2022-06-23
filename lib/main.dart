@@ -21,6 +21,9 @@ import 'package:tunesevenui/screen/song%20payment/buying.dart';
 import 'Homepages/homepagealbum.dart';
 import 'Homepages/hompageartists.dart';
 import 'navigation/route_generator.dart';
+import 'screen/login and signup/Signup.dart';
+import 'screen/login and signup/test.dart';
+import 'screen/login and signup/textlogin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,10 +36,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(backgroundColor: Colors.black),
-      //    initialRoute: "/",
-      // onGenerateRoute: ourRouteGenerator,
-      home:HomePage(),
+         theme: ThemeData(backgroundColor: Colors.black),
+         initialRoute: "/",
+         onGenerateRoute: ourRouteGenerator,
+      home:Signup(),
     );
 
 
