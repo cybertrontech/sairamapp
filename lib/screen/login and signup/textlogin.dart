@@ -10,7 +10,6 @@ import '../../colors/all colors.dart';
 import '../../images/all img.dart';
 import 'Signup.dart';
 
-
 class testlogin extends StatefulWidget {
   const testlogin({Key? key}) : super(key: key);
 
@@ -19,7 +18,6 @@ class testlogin extends StatefulWidget {
 }
 
 class _LoginpageState extends State<testlogin> {
-
   final _formKey = GlobalKey<FormState>();
 
   String _userEmail = '';
@@ -28,7 +26,26 @@ class _LoginpageState extends State<testlogin> {
   String _confirmPassword = '';
 
   // This function is triggered when the user press the "Sign Up" button
-  void _trySubmitForm() {
+  void _trySubmitForm() async {
+    try {
+      Map<String, String> body = {
+        'email': "yugalkhati570@gmail.com",
+        'password': "1234"
+      };
+      Response response = await post(
+          Uri.parse('https://sairambackend.herokuapp.com/login'),
+          body: jsonEncode(body),
+          headers: {"Content-Type": "application/json"});
+      if (response.statusCode == 200) {
+        var data = jsonDecode(response.body.toString());
+        print(data['token']);
+        print('account created successfully');
+      } else {
+        print('false');
+      }
+    } catch (e) {
+      print(e.toString());
+    }
     final bool? isValid = _formKey.currentState?.validate();
     if (isValid == true) {
       debugPrint('Everything looks good!');
@@ -41,6 +58,7 @@ class _LoginpageState extends State<testlogin> {
       Continute proccessing the provided information with your own logic
       such us sending HTTP requests, savaing to SQLite database, etc.
       */
+
     }
   }
 
@@ -84,9 +102,9 @@ class _LoginpageState extends State<testlogin> {
                             ],
                           ),
                           SizedBox(height: 30),
-
                           SizedBox(height: 15),
-                          Form(child: Column(
+                          Form(
+                              child: Column(
                             children: [
                               TextFormField(
                                 decoration: const InputDecoration(
@@ -98,7 +116,8 @@ class _LoginpageState extends State<testlogin> {
                                     return 'Please enter your email address';
                                   }
                                   // Check if the entered email has the right format
-                                  if (!RegExp(r'\S+@\S+\.\S+').hasMatch(value)) {
+                                  if (!RegExp(r'\S+@\S+\.\S+')
+                                      .hasMatch(value)) {
                                     return 'Please enter a valid email address';
                                   }
                                   // Return null if the entered email is valid
@@ -106,15 +125,14 @@ class _LoginpageState extends State<testlogin> {
                                 },
                                 onChanged: (value) => _userEmail = value,
                               ),
-                              SizedBox(height: 15,),
+                              SizedBox(
+                                height: 15,
+                              ),
                               TextFormField(
-                                decoration:
-                                const InputDecoration(
-
+                                decoration: const InputDecoration(
                                     border: OutlineInputBorder(),
                                     prefixIcon: Icon(Icons.lock),
                                     labelText: 'Password'),
-
                                 obscureText: true,
                                 validator: (value) {
                                   if (value == null || value.trim().isEmpty) {
@@ -128,7 +146,6 @@ class _LoginpageState extends State<testlogin> {
                                 },
                                 onChanged: (value) => _password = value,
                               ),
-
                             ],
                           )),
                           SizedBox(height: 40),
@@ -223,7 +240,8 @@ class _LoginpageState extends State<testlogin> {
                                 onTap: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => const Signup()),
+                                    MaterialPageRoute(
+                                        builder: (context) => const Signup()),
                                   );
                                 },
                                 child: Text(

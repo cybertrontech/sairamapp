@@ -10,7 +10,6 @@ import '../../Homepages/navigation_menu.dart';
 import '../../colors/all colors.dart';
 import '../../images/all img.dart';
 
-
 class NavProps {
   final String phone;
   final String email;
@@ -57,26 +56,25 @@ class _LoginpageState extends State<Loginpage> {
       }
     }
   }
-void login(String email,password)async{
-    try{
-      Response response =await post(
-      Uri.parse('https://reqres.in/api/login'),
-        body: {
-        'email':email,
-          'password':password
-        }
-      );
-      if(response.statusCode==200){
+
+  void login(String email, password) async {
+    try {
+      print(email);
+      print(password);
+      Response response = await post(
+          Uri.parse('https://sairambackend.herokuapp.com/login'),
+          body: {'email': email, 'password': password});
+      if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
         print(data['token']);
         print('account created successfully');
-      }else{
+      } else {
         print('false');
       }
-    }catch(e){
+    } catch (e) {
       print(e.toString());
     }
-}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,10 +83,14 @@ void login(String email,password)async{
       body: SafeArea(
         child: Column(
           children: [
-            Image.asset(tune7logoweb,width: 120,height: 140,),
+            Image.asset(
+              tune7logoweb,
+              width: 120,
+              height: 140,
+            ),
             Padding(
               padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height /120,
+                  top: MediaQuery.of(context).size.height / 120,
                   left: MediaQuery.of(context).size.width / 25,
                   right: MediaQuery.of(context).size.width / 25),
               child: Container(
@@ -122,7 +124,6 @@ void login(String email,password)async{
                               ),
                               SizedBox(height: 30),
                               CommonTextField(
-
                                 focusNode: emailFocus,
                                 controller: emailController,
                                 keyboardType: TextInputType.emailAddress,
@@ -155,7 +156,8 @@ void login(String email,password)async{
                               ),
                               SizedBox(height: 40),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   GestureDetector(
                                     onTap: () {},
@@ -211,30 +213,40 @@ void login(String email,password)async{
                               SizedBox(
                                 height: 20,
                               ),
-                              MaterialButton(
-                                onPressed: () {
-                                  login(emailController.text.toString(),
-                                      passwordController.text.toString());
-                                   Navigator.push(
-                                     context,
-                                     MaterialPageRoute(
-                                         builder: (context) => NavMenu(title: "")),
-                                   );
-                                },
-                                color: Colors.blue,
-                                minWidth: 350,
-                                height: 55,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30)),
-                                child: Text(
-                                  "Get Started",
-                                  style: TextStyle(
-                                      color: textcolor,
-                                      fontSize: 20,
-                                      fontFamily: 'Louis George Cafe',
-                                      fontWeight: FontWeight.w800),
-                                ),
-                              ),
+                              GestureDetector(
+                                  onTap: () {}, child: Text('hello')),
+                              // MaterialButton(
+                              //     onPressed: () {
+                              //       print("Hello");data
+                              //       login(emailController.text.toString(),
+                              //           passwordController.text.toString());
+
+                              //       // Navigator.push(
+                              //       //   context,
+                              //       //   MaterialPageRoute(
+                              //       //       builder: (context) =>
+                              //       //           NavMenu(title: "")),
+                              //       // );
+                              //     },
+                              //     color: Colors.blue,
+                              //     minWidth: 350,
+                              //     height: 55,
+                              //     shape: RoundedRectangleBorder(
+                              //         borderRadius: BorderRadius.circular(30)),
+                              //     child: GestureDetector(
+                              //       onTap: () {
+                              //         print("shit");
+                              //       },
+                              //       child: Text(
+                              //         "Get Started",
+                              //         style: TextStyle(
+                              //             color: textcolor,
+                              //             fontSize: 20,
+                              //             fontFamily: 'Louis George Cafe',
+                              //             fontWeight: FontWeight.w800),
+                              //       ),
+                              //     ))
+
                               SizedBox(
                                 height: 20,
                               ),
@@ -253,7 +265,9 @@ void login(String email,password)async{
                                     onTap: () {
                                       Navigator.push(
                                         context,
-                                        MaterialPageRoute(builder: (context) => const Signup()),
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const Signup()),
                                       );
                                     },
                                     child: Text(
