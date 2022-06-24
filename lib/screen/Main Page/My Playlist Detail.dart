@@ -21,7 +21,7 @@ class _PlaylistDetailState extends State<PlaylistDetail> {
     ListTile(leading:CircleAvatar(child: Image.asset(artistalbum03),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
     ListTile(leading:CircleAvatar(child: Image.asset(artistalbum03),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
     ListTile(leading:CircleAvatar(child: Image.asset(artistalbum03),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
-    ListTile(leading:CircleAvatar(child: Image.asset(artistalbum03),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(artistalbum03),),title:Text("Rampag (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
 
   ];
   @override
@@ -52,22 +52,24 @@ class _PlaylistDetailState extends State<PlaylistDetail> {
 
             Container(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child:ListView.separated(
+              height: 310,
+              child: ListView.separated(
                 // physics: NeverScrollableScrollPhysics(),
                 itemCount: items.length,
                 separatorBuilder: (context,index){
+                  final currentitems = items[index+1];
                   return ListTile(
                     onTap: (){},
-                    leading: CircleAvatar(
-                      child: items[index].leading,
-                    ),
-                    title: items[index].title,
-                    subtitle: items[index].subtitle,
-                    trailing: items[index].trailing,
+                    leading: currentitems.leading,
+                    title: currentitems.title,
+                    subtitle:currentitems.subtitle,
+                    trailing: currentitems.trailing,
                   );
                 }, itemBuilder: (BuildContext context, int index) =>
-                  Divider(color: Colors.white38,indent: 19,endIndent: 20,),),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15,left: 16),
+                    child: Divider(color: Colors.white38,),
+                  ),),
             ),
           ],
 

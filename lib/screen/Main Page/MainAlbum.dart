@@ -252,6 +252,16 @@ class Albums extends StatelessWidget {
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
         trailing: Text("STORE", style: TextStyle(color: subtext,fontWeight: FontWeight.bold))),
+    ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum03),
+        ),
+        title: Text(
+          "Basanta",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("FREE", style: TextStyle(color: subtext,fontWeight: FontWeight.bold))),
   ];
 
   @override
@@ -277,20 +287,25 @@ class Albums extends StatelessWidget {
             SizedBox(height: 13,),
             Container(
               width: MediaQuery.of(context).size.width,
-              height: 440,
-              child: ListView.builder(
-                  // physics: NeverScrollableScrollPhysics(),
-                  itemCount: items.length,
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      trailing: items[index].trailing,
-                      leading: CircleAvatar(
-                        child: items[index].leading,
-                      ),
-                      title: items[index].title,
-                      subtitle: items[index].subtitle,
-                    );
-                  }),
+              height: 410,
+              child: ListView.separated(
+                // physics: NeverScrollableScrollPhysics(),
+                itemCount: items.length,
+                separatorBuilder: (context,index){
+                  final currentitems = items[index+1];
+                  return ListTile(
+
+                    onTap: (){},
+                    leading: currentitems.leading,
+                    title: currentitems.title,
+                    subtitle:currentitems.subtitle,
+                    trailing: currentitems.trailing,
+                  );
+                }, itemBuilder: (BuildContext context, int index) =>
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15,left: 16),
+                    child: Divider(color: Colors.white38,),
+                  ),),
             ),
           ],
         ),

@@ -65,28 +65,27 @@ class yourlibrary extends StatelessWidget {
             child: Text("Here you will find music and album you have brought from our store.",style: TextStyle(color: subtext,fontWeight: FontWeight.bold),),
           ),
          SizedBox(height: 12,),
-         Container(
-              width: MediaQuery.of(context).size.width,
-              height: 400,
-              child:  ListView.separated(
-                // physics: NeverScrollableScrollPhysics(),
-                itemCount: items.length,
-                separatorBuilder: (context,index){
-                  return ListTile(
-                    onTap: (){},
-                    leading: CircleAvatar(
-                      child: items[index].leading,
-                    ),
-                    title: items[index].title,
-                    subtitle: items[index].subtitle,
-                    trailing: items[index].trailing,
-                  );
-                }, itemBuilder: (BuildContext context, int index) =>
-                  Padding(
-                    padding: const EdgeInsets.only(right: 15,left: 16),
-                    child: Divider(color: Colors.white38,),
-                  ),),
-            ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 410,
+            child: ListView.separated(
+              // physics: NeverScrollableScrollPhysics(),
+              itemCount: items.length,
+              separatorBuilder: (context,index){
+                final currentitems = items[index+1];
+                return ListTile(
+                  onTap: (){},
+                  leading: currentitems.leading,
+                  title: currentitems.title,
+                  subtitle:currentitems.subtitle,
+                  trailing: currentitems.trailing,
+                );
+              }, itemBuilder: (BuildContext context, int index) =>
+                Padding(
+                  padding: const EdgeInsets.only(right: 15,left: 16),
+                  child: Divider(color: Colors.white38,),
+                ),),
+          ),
         ],
       ),
     );

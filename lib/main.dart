@@ -16,11 +16,12 @@ import 'package:tunesevenui/screen/Main%20Page/your%20library.dart';
 import 'package:tunesevenui/screen/Ui/seek%20bar.dart';
 import 'package:tunesevenui/screen/song%20payment/Payment%20Done.dart';
 import 'package:tunesevenui/screen/song%20payment/buying.dart';
+
 import 'Homepages/homepagealbum.dart';
 import 'Homepages/hompageartists.dart';
 import 'navigation/route_generator.dart';
 import 'screen/login and signup/Signup.dart';
-import 'screen/login and signup/login.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -36,10 +37,10 @@ class MyApp extends StatelessWidget {
          theme: ThemeData(backgroundColor: Colors.black),
          initialRoute: "/",
          onGenerateRoute: ourRouteGenerator,
-      home:GetStarted(),
+         home:yourlibrary(),
     );
 
-    //
+
     // return GetMaterialApp(
     //   unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoutePage()),
     //   initialRoute: '/',
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
     //
     //     GetPage(name: '/', page: ()=> SplashScreen()),
     //     GetPage(name: '/welcome', page: ()=> WelcomeScreen()),
-    //     GetPage(name: '/login', page: ()=> login()),
+    //     GetPage(name: '/login', page: ()=> Loginpage()),
     //   ],
     // );
   }

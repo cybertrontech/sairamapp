@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rounded_linear_progress/rounded_linear_progress.dart';
-
 import '../../colors/all colors.dart';
 import '../../images/all img.dart';
 import '../Ui/Dialog.dart';
@@ -14,7 +13,6 @@ class musicplayer extends StatefulWidget {
   @override
   State<musicplayer> createState() => _musicplayerState();
 }
-
 class _musicplayerState extends State<musicplayer> {
   @override
   Widget build(BuildContext context) {
