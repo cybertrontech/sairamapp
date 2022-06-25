@@ -18,12 +18,7 @@ class testlogin extends StatefulWidget {
 }
 
 class _LoginpageState extends State<testlogin> {
-  final _formKey = GlobalKey<FormState>();
 
-  String _userEmail = '';
-  String _userName = '';
-  String _password = '';
-  String _confirmPassword = '';
 
   // This function is triggered when the user press the "Sign Up" button
   void _trySubmitForm() async {
@@ -73,9 +68,13 @@ class _LoginpageState extends State<testlogin> {
   //     debugPrint(_confirmPassword);
   //   }
   // }
-  TextEditingController emailController = TextEditingController(text: "yugal");
-  TextEditingController passwordController = TextEditingController(text: "1234");
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   bool hidepassword = true;
+
+
+
+  final formKey=GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,7 +99,7 @@ class _LoginpageState extends State<testlogin> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ListView(
-                      physics: NeverScrollableScrollPhysics(),
+                      // physics: NeverScrollableScrollPhysics(),
                       children: [
                         Column(
                           children: [
@@ -119,7 +118,8 @@ class _LoginpageState extends State<testlogin> {
                             ),
                             SizedBox(height: 15),
                             Form(
-                                autovalidateMode: AutovalidateMode.onUserInteraction,
+                                autovalidateMode: AutovalidateMode.disabled,
+                                key: formKey,
                                 child: Column(
                                   children: [
                                     TextFormField(
@@ -134,7 +134,6 @@ class _LoginpageState extends State<testlogin> {
                                           ),
                                           prefixIcon: Icon(Icons.email),
                                           labelText: 'Email'),
-
                                       validator: (value) {
                                         if (value == null || value.trim().isEmpty) {
                                           return 'Please enter your email address';
@@ -147,20 +146,19 @@ class _LoginpageState extends State<testlogin> {
                                         // Return null if the entered email is valid
                                         return null;
                                       },
-                                      onChanged: (value) => _userEmail = value,
+
                                     ),
                                     SizedBox(
                                       height: 15,
                                     ),
+                                    ///password
                                     TextFormField(
                                       keyboardType: TextInputType.visiblePassword,
-                                      maxLength: 10,
-                                      maxLines: 1,
+
                                       controller: passwordController,
                                       decoration: InputDecoration(
                                           border: OutlineInputBorder(
                                               borderRadius: BorderRadius.circular(14)
-
                                           ),
                                           prefixIcon: Icon(Icons.lock),
                                           suffixIcon: GestureDetector(
@@ -181,7 +179,6 @@ class _LoginpageState extends State<testlogin> {
                                         // Return null if the entered password is valid
                                         return null;
                                       },
-                                      onChanged: (value) => _password = value,
                                     ),
                                   ],
                                 )),
@@ -244,7 +241,16 @@ class _LoginpageState extends State<testlogin> {
                               height: 20,
                             ),
                             MaterialButton(
-                              onPressed: _trySubmitForm,
+                              onPressed: (){
+                                if (formKey.currentState!=null){
+                                  formKey.currentState!.save();
+                                  final isValid= formKey.currentState!.validate();
+                                  if(!isValid){
+                                    return;
+                                  }
+                                  _trySubmitForm();
+                                }
+                              },
                               color: Colors.blue,
                               minWidth: 350,
                               height: 55,
