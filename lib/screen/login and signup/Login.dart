@@ -9,6 +9,7 @@ import '../../Homepages/home_page.dart';
 import '../../Homepages/navigation_menu.dart';
 import '../../colors/all colors.dart';
 import '../../images/all img.dart';
+import 'SecureStorage/securestorage.dart';
 import 'Signup.dart';
 
 class testlogin extends StatefulWidget {
@@ -19,21 +20,25 @@ class testlogin extends StatefulWidget {
 
 class _LoginpageState extends State<testlogin> {
 
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  bool hidepassword = true;
+
 
   // This function is triggered when the user press the "Sign Up" button
   void _trySubmitForm() async {
     try {
       Map<String, String> body = {
-        'email': "yugalkhati570@gmail.com",
-        'password': "1234"
-
+        'email': emailController.text,
+        'password': passwordController.text
       };
       Response response = await post(
           Uri.parse('https://sairambackend.herokuapp.com/login'),
           body: jsonEncode(body),
           headers: {"Content-Type": "application/json"});
       if (response.statusCode == 200) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.cyan,content: Text("SUCCESS YOUR LOGIN IS SUCCESSFULL WAIT A MIN}",
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.cyan,
+            content: Text("SUCCESS YOUR LOGIN IS SUCCESSFULL WAIT A MIN.",
           style: TextStyle(
               color: Colors.black
           ),
@@ -41,40 +46,42 @@ class _LoginpageState extends State<testlogin> {
         ));
         var data = jsonDecode(response.body.toString());
         print(data['token']);
-
         print('account created successfully');
         Future.delayed(Duration(seconds: 4),(){
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
         });
-      };
+      }else{
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+                backgroundColor: Colors.blue,
+                content: Text("username or password is inncorrect",
+                  style: TextStyle(
+                      color: Colors.black
+                  ),
+                )));
+      }
     } catch (e) {
       print(e.toString());
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             backgroundColor: Colors.blue,
-              content: Text("username or password is inncorrect",
+              content: Text("username or password inncorrect",
         style: TextStyle(
             color: Colors.black
         ),
       )));
     }
   }
-  //   final bool? isValid = _formKey.currentState?.validate();
-  //   if (isValid == true) {
-  //     debugPrint('Everything looks good!');
-  //     debugPrint(_userEmail);
-  //     debugPrint(_userName);
-  //     debugPrint(_password);
-  //     debugPrint(_confirmPassword);
-  //   }
-  // }
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  bool hidepassword = true;
-
-
-
   final formKey=GlobalKey<FormState>();
+
+
+  Future init()async{
+    final name = await UserSecureStorage.getEmailname() ??'';
+    setState((){
+      this.emailController.text=name;
+    });
+
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,7 +153,6 @@ class _LoginpageState extends State<testlogin> {
                                         // Return null if the entered email is valid
                                         return null;
                                       },
-
                                     ),
                                     SizedBox(
                                       height: 15,
@@ -154,7 +160,6 @@ class _LoginpageState extends State<testlogin> {
                                     ///password
                                     TextFormField(
                                       keyboardType: TextInputType.visiblePassword,
-
                                       controller: passwordController,
                                       decoration: InputDecoration(
                                           border: OutlineInputBorder(
@@ -173,7 +178,7 @@ class _LoginpageState extends State<testlogin> {
                                         if (value == null || value.trim().isEmpty) {
                                           return 'This field is required';
                                         }
-                                        if (value.trim().length < 8) {
+                                        if (value.trim().length < 4) {
                                           return 'Password must be at least 8 characters in length';
                                         }
                                         // Return null if the entered password is valid
@@ -241,7 +246,8 @@ class _LoginpageState extends State<testlogin> {
                               height: 20,
                             ),
                             MaterialButton(
-                              onPressed: (){
+                              onPressed: ()async{
+                                await UserSecureStorage.setUsername(emailController.text);
                                 if (formKey.currentState!=null){
                                   formKey.currentState!.save();
                                   final isValid= formKey.currentState!.validate();

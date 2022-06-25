@@ -21,10 +21,13 @@ class WelcomeScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Image.asset(
-                  tune7logoweb,
-                  height: 200,
-                  width: 200,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset(
+                    tune7logoweb,
+                    height: 160,
+                    width: 160,
+                  ),
                 ),
               ],
             ),
@@ -36,7 +39,6 @@ class WelcomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-
                 Text(
                   "Listen to",
                   textAlign: TextAlign.left,
@@ -46,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
                       fontFamily: 'Louis George Cafe',
                       fontWeight: FontWeight.w800),
                 ),
-                SizedBox(height: 12,),
+                SizedBox(height: 3,),
                 Text(
                   "Nepalese Musics",
                   textAlign: TextAlign.left,
@@ -56,7 +58,7 @@ class WelcomeScreen extends StatelessWidget {
                       fontFamily: 'Louis George Cafe',
                       fontWeight: FontWeight.w800),
                 ),
-                SizedBox(height: 12,),
+                SizedBox(height: 20,),
 
                 Text(
                   "TuneSeven is a Nepalese Music & Podcast \nStreaming app. Listen to your favorite \nNepalese Creator.",
@@ -66,7 +68,7 @@ class WelcomeScreen extends StatelessWidget {
                       fontFamily: 'Louis George Cafe',
                       fontWeight: FontWeight.w800),
                 ),
-                SizedBox(height: 50,),
+                SizedBox(height: 45,),
                 Center(
                   child: MaterialButton(
                     onPressed: () {
@@ -91,7 +93,7 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 30,),
+                SizedBox(height: 20,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -116,118 +118,9 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-
               ],
             ),
           ),),
-          // Container(
-          //   width: width,
-          //   child: Padding(
-          //     padding: const EdgeInsets.only(left: 20.0),
-          //     child: Column(children: [
-          //       SizedBox(
-          //         height: 80,
-          //       ),
-          //
-          //       SizedBox(
-          //         height: 150,
-          //       ),
-          //       Row(
-          //         children: [
-          //           Text(
-          //             "Listen to",
-          //             textAlign: TextAlign.left,
-          //             style: TextStyle(
-          //                 fontSize: 30,
-          //                 color: Colors.white,
-          //                 fontFamily: 'Louis George Cafe',
-          //                 fontWeight: FontWeight.w800),
-          //           ),
-          //         ],
-          //       ),
-          //       Row(
-          //         children: [
-          //           Text(
-          //             "Nepalese Musics",
-          //             textAlign: TextAlign.left,
-          //             style: TextStyle(
-          //                 fontSize: 30,
-          //                 color: Colors.white,
-          //                 fontFamily: 'Louis George Cafe',
-          //                 fontWeight: FontWeight.w800),
-          //           ),
-          //         ],
-          //       ),
-          //       SizedBox(
-          //         height: 20,
-          //       ),
-          //       Row(
-          //         children: [
-          //           Text(
-          //             "TuneSeven is a Nepalese Music & Podcast \nStreaming app. Listen to your favorite \nNepalese Creator.",
-          //             style: TextStyle(
-          //                 fontSize: 18,
-          //                 color: Colors.white,
-          //                 fontFamily: 'Louis George Cafe',
-          //                 fontWeight: FontWeight.w800),
-          //           ),
-          //         ],
-          //       ),
-          //       SizedBox(
-          //         height: 20,
-          //       ),
-          //       MaterialButton(
-          //         onPressed: () {
-          //           // Navigator.push(
-          //           //   context,
-          //           //   MaterialPageRoute(
-          //           //       builder: (context) => const GetStarted()),
-          //           // );
-          //         },
-          //         color: Colors.blue,
-          //         minWidth: 350,
-          //         height: 55,
-          //         shape: RoundedRectangleBorder(
-          //             borderRadius: BorderRadius.circular(30)),
-          //         child: Text(
-          //           "Get Started",
-          //           style: TextStyle(
-          //               color: Colors.white,
-          //               fontSize: 20,
-          //               fontFamily: 'Louis George Cafe',
-          //               fontWeight: FontWeight.w800),
-          //         ),
-          //       ),
-          //       SizedBox(
-          //         height: 30,
-          //       ),
-          //       Row(
-          //         mainAxisAlignment: MainAxisAlignment.center,
-          //         children: [
-          //           Text(
-          //             "Already have an account?",
-          //             style: TextStyle(
-          //                 fontSize: 15,
-          //                 color: Colors.white,
-          //                 fontFamily: 'Louis George Cafe',
-          //                 fontWeight: FontWeight.w800),
-          //           ),
-          //           GestureDetector(
-          //             onTap: () {},
-          //             child: Text(
-          //               '  Sign in',
-          //               style: TextStyle(
-          //                   fontSize: 15,
-          //                   color: Colors.blue,
-          //                   fontFamily: 'Louis George Cafe',
-          //                   fontWeight: FontWeight.w900),
-          //             ),
-          //           ),
-          //         ],
-          //       ),
-          //     ]),
-          //   ),
-          // ),
         ],
       ),
     );
