@@ -26,7 +26,7 @@ class _LoginpageState extends State<testlogin> {
 
 
   // This function is triggered when the user press the "Sign Up" button
-  void _trySubmitForm() async {
+  void LoginApi() async {
     try {
       Map<String, String> body = {
         'email': emailController.text,
@@ -73,14 +73,11 @@ class _LoginpageState extends State<testlogin> {
     }
   }
   final formKey=GlobalKey<FormState>();
-
-
   Future init()async{
     final name = await UserSecureStorage.getEmailname() ??'';
     setState((){
       this.emailController.text=name;
     });
-
 }
   @override
   Widget build(BuildContext context) {
@@ -254,7 +251,7 @@ class _LoginpageState extends State<testlogin> {
                                   if(!isValid){
                                     return;
                                   }
-                                  _trySubmitForm();
+                                  LoginApi();
                                 }
                               },
                               color: Colors.blue,

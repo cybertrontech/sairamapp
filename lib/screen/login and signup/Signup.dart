@@ -1,6 +1,11 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:get/get_connect/http/src/response/response.dart';
+import 'package:http/http.dart';
 import 'package:tunesevenui/screen/login%20and%20signup/Login.dart';
+import 'package:http/http.dart' as http;
 
+import '../../Homepages/home_page.dart';
 import '../../Homepages/navigation_menu.dart';
 import '../../colors/all colors.dart';
 import '../../images/all img.dart';
@@ -15,13 +20,12 @@ class Signup extends StatefulWidget {
 
 class _HomePageState extends State<Signup> {
   // Define a key to access the form
-  final _formKey = GlobalKey<FormState>();
 
+  final _formKey = GlobalKey<FormState>();
   String _userEmail = '';
   String _userName = '';
   String _password = '';
   String _confirmPassword = '';
-
   void _trySubmitForm() {
     final bool? isValid = _formKey.currentState?.validate();
     if (isValid == true) {
@@ -32,6 +36,52 @@ class _HomePageState extends State<Signup> {
       debugPrint(_confirmPassword);
     }
   }
+
+
+  void SignupApi() async {
+   {
+      Map<String, String> data = {
+        'first_name':usernameController.text,
+        'email': emailController.text,
+        'password': passwordController.text
+      };
+      print(data.toString());
+      final response = await http.post(
+          Uri.parse('https://sairambackend.herokuapp.com/register'),
+          body: jsonEncode(data),
+          headers: {"Content-Type": "application/json",
+
+          });
+      if (response.statusCode == 200) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.cyan,
+            content: Text(" YOUR ACCOUNT IS SUCCESSFULL CREATED WAIT A MIN.",
+              style: TextStyle(
+                  color: Colors.black
+              ),
+            )
+        ));
+        var data = jsonDecode(response.body.toString());
+        print('account created successfully');
+        Future.delayed(Duration(seconds: 4),(){
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
+        });
+      }else{
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+                backgroundColor: Colors.blue,
+                content: Text("TRY AGAIN LATER",
+                  style: TextStyle(
+                      color: Colors.black
+                  ),
+                )));
+      }
+    }
+  }
+
+
+
+
+  final formKey=GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmController =TextEditingController();
@@ -68,7 +118,8 @@ class _HomePageState extends State<Signup> {
                               Text("Welcome",style: TextStyle(fontSize: 35,fontWeight: FontWeight.w600),),
                               SizedBox(height: 6,),
                               Form(
-                                  key: _formKey,
+                                  autovalidateMode: AutovalidateMode.disabled,
+                                  key: formKey,
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
@@ -94,7 +145,6 @@ class _HomePageState extends State<Signup> {
                                           // Return null if the entered username is valid
                                           return null;
                                         },
-                                        onChanged: (value) => _userName = value,
                                       ),
                                       /// email
                                       TextFormField(
@@ -116,7 +166,6 @@ class _HomePageState extends State<Signup> {
                                           // Return null if the entered email is valid
                                           return null;
                                         },
-                                        onChanged: (value) => _userEmail = value,
                                       ),
                                       SizedBox(height: 7,),
 
@@ -184,7 +233,16 @@ class _HomePageState extends State<Signup> {
                                       Container(
                                           alignment: Alignment.center,
                                           child:  MaterialButton(
-                                            onPressed: _trySubmitForm,
+                                            onPressed: ()async{
+                                              if (formKey.currentState!=null){
+                                                formKey.currentState!.save();
+                                                final isValid= formKey.currentState!.validate();
+                                                if(!isValid){
+                                                  return;
+                                                }
+                                                SignupApi();
+                                              }
+                                            },
                                             color: Colors.blue,
                                             minWidth: 320,
                                             height: 55,
@@ -216,7 +274,7 @@ class _HomePageState extends State<Signup> {
                                               Navigator.push(
                                                 context,
                                                 MaterialPageRoute(builder: (context) =>  testlogin()),
-                                              );                                    },
+                                              );},
                                             child: Text(
                                               ' Login',
                                               style: TextStyle(

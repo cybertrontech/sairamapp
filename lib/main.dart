@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
          theme: ThemeData(backgroundColor: Colors.black),
          initialRoute: "/",
          onGenerateRoute: ourRouteGenerator,
-      home:HomePage(),
+      home:Signup(),
     );
 
     // return GetMaterialApp(
