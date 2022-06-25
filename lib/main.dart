@@ -14,7 +14,7 @@ import 'package:tunesevenui/screen/Main%20Page/splash.dart';
 import 'package:tunesevenui/screen/Main%20Page/welcome_screen.dart';
 import 'package:tunesevenui/screen/Main%20Page/your%20library.dart';
 import 'package:tunesevenui/screen/Ui/seek%20bar.dart';
-import 'package:tunesevenui/screen/login%20and%20signup/textlogin.dart';
+import 'package:tunesevenui/screen/login%20and%20signup/Login.dart';
 import 'package:tunesevenui/screen/song%20payment/Payment%20Done.dart';
 import 'package:tunesevenui/screen/song%20payment/buying.dart';
 
@@ -41,12 +41,10 @@ class MyApp extends StatelessWidget {
       home:testlogin(),
     );
 
-
     // return GetMaterialApp(
     //   unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoutePage()),
     //   initialRoute: '/',
     //   getPages: [
-    //
     //     GetPage(name: '/', page: ()=> SplashScreen()),
     //     GetPage(name: '/welcome', page: ()=> WelcomeScreen()),
     //     GetPage(name: '/login', page: ()=> Loginpage()),

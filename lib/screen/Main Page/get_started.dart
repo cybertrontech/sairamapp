@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tunesevenui/images/all%20img.dart';
-import 'package:tunesevenui/screen/login%20and%20signup/textlogin.dart';
+import 'package:tunesevenui/screen/login%20and%20signup/Login.dart';
 
 import '../../colors/all colors.dart';
 
