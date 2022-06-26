@@ -25,6 +25,7 @@ class _LoginpageState extends State<testlogin> {
 
   // This function is triggered when the user press the "Sign Up" button
   void LoginApi() async {
+    setState((){loading=true;});
     try {
       Map<String, String> body = {
         'email': emailController.text,
@@ -34,33 +35,51 @@ class _LoginpageState extends State<testlogin> {
           Uri.parse('https://sairambackend.herokuapp.com/login'),
           body: jsonEncode(body),
           headers: {"Content-Type": "application/json"});
+      print(response.body);
       if (response.statusCode == 200) {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.cyan,
-            content: Text("SUCCESS YOUR LOGIN IS SUCCESSFULL WAIT A MIN.",
-          style: TextStyle(
-              color: Colors.black
-          ),
-        )
-        ));
-        var data = jsonDecode(response.body.toString());
+
+        var data = jsonDecode(response.body);
         print(data['token']);
-        int successCode=await securestorage.storeloginId(data);
-        if(successCode==1){
-          setState((){loading = false;});
-          print('account created successfully');
-          Future.delayed(Duration(seconds: 4),(){
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
-          });
-        }else{
-        print("Sorry something went wrong.");
-        }
+        try{
+          int successCode=await Securestorage.storeloginId(data.toString());
+          if(successCode==1){
+            setState((){loading = false;});
+
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.cyan,
+                content: Text("SUCCESS YOUR LOGIN IS SUCCESSFULL WAIT A MIN.",
+                  style: TextStyle(
+                      color: Colors.black
+                  ),
+                )
+            ));
+            Future.delayed(Duration(seconds: 4),(){
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
+            });
+          }else{
+            print("Sorry something went wrong.");
+          }
+        }catch(e)
+    {
+
+        print("the error is $e ");
+    }
+
+      }else{
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+                backgroundColor: Colors.blue,
+                content: Text("Either Wrong Username or Password.",
+                  style: TextStyle(
+                      color: Colors.black
+                  ),
+                )));
       }
     } catch (e) {
       print(e.toString());
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             backgroundColor: Colors.blue,
-              content: Text("username or password inncorrect",
+              content: Text("Something went wrong catch error.",
         style: TextStyle(
             color: Colors.black
         ),
@@ -239,6 +258,7 @@ class _LoginpageState extends State<testlogin> {
                             ),
                             MaterialButton(
                               onPressed: ()async{
+                                print("Clicked");
                                 if (formKey.currentState!=null){
                                   formKey.currentState!.save();
                                   final isValid= formKey.currentState!.validate();
@@ -254,7 +274,7 @@ class _LoginpageState extends State<testlogin> {
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30)),
                               child: Text(
-                                "Get Started",
+                               loading? "Load..." :"Get Started",
                                 style: TextStyle(
                                     color: textcolor,
                                     fontSize: 20,
@@ -289,6 +309,21 @@ class _LoginpageState extends State<testlogin> {
                                     style: TextStyle(
                                         fontSize: 15,
                                         color: Colors.blue,
+                                        fontFamily: 'Louis George Cafe',
+                                        fontWeight: FontWeight.w900),
+                                  ),
+                                ),
+                                SizedBox(height: 12,),
+                                GestureDetector(
+                                  onTap: () async{
+                                    int? a=await Securestorage.removeToken();
+                                    print(a);
+                                  },
+                                  child: Text(
+                                    ' LogOut',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        color: Colors.red,
                                         fontFamily: 'Louis George Cafe',
                                         fontWeight: FontWeight.w900),
                                   ),

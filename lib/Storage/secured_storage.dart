@@ -1,7 +1,7 @@
  import 'dart:convert';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class securestorage{
+class Securestorage{
   static const FlutterSecureStorage storage =FlutterSecureStorage();
   static const userid = 'userid';
 
@@ -14,7 +14,7 @@ class securestorage{
     }
   }
 
-  static Future<String?>gettoken()async{
+  static Future<String?>getToken()async{
     String? userid =await storage.read(key: "userid");
     if (userid==null){
       return null;
@@ -22,5 +22,23 @@ class securestorage{
     Map<String,dynamic>s=jsonDecode(userid);
     return s['token'];
   }
+
+
+  static Future<int?> removeToken()async{
+    try{
+      await storage.deleteAll();
+      print(Securestorage.getToken());
+      return 1;
+
+    }catch(e)
+    {
+      print("Something is wrong");
+      return 0;
+    }
+
+  }
+
+
+
 
  }
