@@ -7,7 +7,7 @@ class securestorage{
 
   static Future<int> storeloginId(String loginReturnData)async{
     try{
-      await storage.write(key: "userid", value: loginReturnData);
+      await storage.write(key: "userId", value: loginReturnData);
       return 1;
     }catch(e){
       return 0;
@@ -22,5 +22,6 @@ class securestorage{
     Map<String,dynamic>s=jsonDecode(userid);
     return s['token'];
   }
+
 
  }

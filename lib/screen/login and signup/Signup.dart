@@ -40,17 +40,18 @@ class _HomePageState extends State<Signup> {
   void SignupApi() async {
    {
       Map<String, String> data = {
-        'first_name':usernameController.text,
-        'last_name':usernameController.text,
+        'first_name':firstnameController.text,
+        'last_name':lastnameController.text,
         'email': emailController.text,
         'password': passwordController.text
       };
       print(data.toString());
       final response = await http.post(
-          Uri.parse('https://sairambackend.herokuapp.com/register'),
+          Uri.parse('https://sairambackend.herokuapp.com/users'),
           body: jsonEncode(data),
           headers: {"Content-Type": "application/json",
           });
+      print(response);
       if (response.statusCode == 200) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.cyan,
             content: Text(" YOUR ACCOUNT IS SUCCESSFULL CREATED WAIT A MIN.",
@@ -64,10 +65,11 @@ class _HomePageState extends State<Signup> {
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
         });
       }else{
+        print(response.body);
         ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
                 backgroundColor: Colors.blue,
-                content: Text("TRY AGAIN LATER",
+                content: Text("TRY AGAIN LATER ${jsonDecode(response.body)['error']}",
                   style: TextStyle(
                       color: Colors.black
                   ),
@@ -78,11 +80,10 @@ class _HomePageState extends State<Signup> {
 
 
   final formKey=GlobalKey<FormState>();
-
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController confirmController =TextEditingController();
-  TextEditingController usernameController = TextEditingController();
+  TextEditingController lastnameController =TextEditingController();
+  TextEditingController firstnameController = TextEditingController();
   bool hidepassword = true;
 
   @override
@@ -121,23 +122,44 @@ class _HomePageState extends State<Signup> {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      /// Username
+                                      /// First_name
                                       TextFormField(
-                                        controller: usernameController,
+                                        controller: firstnameController,
                                         maxLines: 1,
                                         maxLength: 10,
                                         textInputAction: TextInputAction.next,
                                         decoration:
-                                         InputDecoration(
+                                        InputDecoration(
                                             border: OutlineInputBorder(
                                                 borderRadius: BorderRadius.circular(14)
                                             ),
-                                            labelText: 'Username'),
+                                            labelText: 'First Name'),
                                         validator: (value) {
                                           if (value == null || value.trim().isEmpty) {
                                             return 'This field is required';}
                                           if (value.trim().length < 4) {
-                                            return 'Username must be at least 4 characters in length';}
+                                            return 'Name must be at least 4 characters in length';}
+                                          // Return null if the entered username is valid
+                                          return null;
+                                        },
+                                      ),
+                                      ///Last_name
+                                      TextFormField(
+                                        controller: lastnameController,
+                                        maxLines: 1,
+                                        maxLength: 10,
+                                        textInputAction: TextInputAction.next,
+                                        decoration:
+                                        InputDecoration(
+                                            border: OutlineInputBorder(
+                                                borderRadius: BorderRadius.circular(14)
+                                            ),
+                                            labelText: 'last Name'),
+                                        validator: (value) {
+                                          if (value == null || value.trim().isEmpty) {
+                                            return 'This field is required';}
+                                          if (value.trim().length < 7) {
+                                            return 'lastName must be at least 4 characters in length';}
                                           // Return null if the entered username is valid
                                           return null;
                                         },
