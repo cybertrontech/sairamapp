@@ -135,11 +135,9 @@ class _HomePageState extends State<Signup> {
                                             labelText: 'Username'),
                                         validator: (value) {
                                           if (value == null || value.trim().isEmpty) {
-                                            return 'This field is required';
-                                          }
+                                            return 'This field is required';}
                                           if (value.trim().length < 4) {
-                                            return 'Username must be at least 4 characters in length';
-                                          }
+                                            return 'Username must be at least 4 characters in length';}
                                           // Return null if the entered username is valid
                                           return null;
                                         },
@@ -166,7 +164,6 @@ class _HomePageState extends State<Signup> {
                                         },
                                       ),
                                       SizedBox(height: 7,),
-
                                       /// Password
                                       TextFormField(
                                         controller: passwordController,
@@ -198,7 +195,6 @@ class _HomePageState extends State<Signup> {
                                         onChanged: (value) => _password = value,
                                       ),
                                       SizedBox(height: 7,),
-
                                       /// Confirm Password
                                       TextFormField(
                                         textInputAction: TextInputAction.next,
@@ -296,7 +292,6 @@ class _HomePageState extends State<Signup> {
               ],
             ),
           ],
-
         ),
       ),
     );
