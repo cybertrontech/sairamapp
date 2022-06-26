@@ -4,7 +4,6 @@ import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:http/http.dart';
 import 'package:tunesevenui/screen/login%20and%20signup/Login.dart';
 import 'package:http/http.dart' as http;
-
 import '../../Homepages/home_page.dart';
 import '../../Homepages/navigation_menu.dart';
 import '../../colors/all colors.dart';
@@ -42,6 +41,7 @@ class _HomePageState extends State<Signup> {
    {
       Map<String, String> data = {
         'first_name':usernameController.text,
+        'last_name':usernameController.text,
         'email': emailController.text,
         'password': passwordController.text
       };
@@ -50,7 +50,6 @@ class _HomePageState extends State<Signup> {
           Uri.parse('https://sairambackend.herokuapp.com/register'),
           body: jsonEncode(data),
           headers: {"Content-Type": "application/json",
-
           });
       if (response.statusCode == 200) {
         ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.cyan,
@@ -60,7 +59,6 @@ class _HomePageState extends State<Signup> {
               ),
             )
         ));
-        var data = jsonDecode(response.body.toString());
         print('account created successfully');
         Future.delayed(Duration(seconds: 4),(){
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
@@ -79,14 +77,14 @@ class _HomePageState extends State<Signup> {
   }
 
 
-
-
   final formKey=GlobalKey<FormState>();
+
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmController =TextEditingController();
   TextEditingController usernameController = TextEditingController();
   bool hidepassword = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -191,7 +189,7 @@ class _HomePageState extends State<Signup> {
                                           if (value == null || value.trim().isEmpty) {
                                             return 'This field is required';
                                           }
-                                          if (value.trim().length < 8) {
+                                          if (value.trim().length < 4) {
                                             return 'Password must be at least 8 characters in length';
                                           }
                                           // Return null if the entered password is valid

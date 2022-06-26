@@ -1,17 +1,14 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tunesevenui/screen/login%20and%20signup/utils/textfield.dart';
-
+import 'package:tunesevenui/Storage/secured_storage.dart';
 import '../../Homepages/home_page.dart';
 import '../../Homepages/navigation_menu.dart';
 import '../../colors/all colors.dart';
 import '../../images/all img.dart';
-import 'SecureStorage/securestorage.dart';
 import 'Signup.dart';
-
+import '../../Storage/secured_storage.dart';
 class testlogin extends StatefulWidget {
 
   @override
@@ -23,6 +20,7 @@ class _LoginpageState extends State<testlogin> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool hidepassword = true;
+  bool loading =false;
 
 
   // This function is triggered when the user press the "Sign Up" button
@@ -46,19 +44,16 @@ class _LoginpageState extends State<testlogin> {
         ));
         var data = jsonDecode(response.body.toString());
         print(data['token']);
-        print('account created successfully');
-        Future.delayed(Duration(seconds: 4),(){
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
-        });
-      }else{
-        ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-                backgroundColor: Colors.blue,
-                content: Text("username or password is inncorrect",
-                  style: TextStyle(
-                      color: Colors.black
-                  ),
-                )));
+        int successCode=await securestorage.storeloginId(data);
+        if(successCode==1){
+          setState((){loading = false;});
+          print('account created successfully');
+          Future.delayed(Duration(seconds: 4),(){
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
+          });
+        }else{
+        print("Sorry something went wrong.");
+        }
       }
     } catch (e) {
       print(e.toString());
@@ -72,13 +67,13 @@ class _LoginpageState extends State<testlogin> {
       )));
     }
   }
+
   final formKey=GlobalKey<FormState>();
-  Future init()async{
-    final name = await UserSecureStorage.getEmailname() ??'';
-    setState((){
-      this.emailController.text=name;
-    });
-}
+
+
+///Securestorage
+  final storage = new FlutterSecureStorage();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -244,7 +239,6 @@ class _LoginpageState extends State<testlogin> {
                             ),
                             MaterialButton(
                               onPressed: ()async{
-                                await UserSecureStorage.setUsername(emailController.text);
                                 if (formKey.currentState!=null){
                                   formKey.currentState!.save();
                                   final isValid= formKey.currentState!.validate();
