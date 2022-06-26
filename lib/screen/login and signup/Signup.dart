@@ -114,7 +114,8 @@ class _HomePageState extends State<Signup> {
                           padding: const EdgeInsets.all(20),
                           child: Column(
                             children: [
-                              Text("Welcome",style: TextStyle(fontSize: 35,fontWeight: FontWeight.w600),),
+                              Text("Welcome",style: TextStyle(fontSize: 35,
+                                  fontWeight: FontWeight.w600),),
                               SizedBox(height: 6,),
                               Form(
                                   autovalidateMode: AutovalidateMode.disabled,
@@ -284,21 +285,6 @@ class _HomePageState extends State<Signup> {
                                                 color: Colors.black,
                                                 fontFamily: 'Louis George Cafe',
                                                 fontWeight: FontWeight.w800),
-                                          ),
-                                          GestureDetector(
-                                            onTap: (){
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(builder: (context) =>  testlogin()),
-                                              );},
-                                            child: Text(
-                                              ' Login',
-                                              style: TextStyle(
-                                                  fontSize: 15,
-                                                  color: Colors.blue,
-                                                  fontFamily: 'Louis George Cafe',
-                                                  fontWeight: FontWeight.w900),
-                                            ),
                                           ),
                                         ],
                                       ),

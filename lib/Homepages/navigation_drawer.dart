@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tunesevenui/colors/all%20colors.dart';
+import 'package:tunesevenui/screen/login%20and%20signup/Signup.dart';
 
+import '../Storage/secured_storage.dart';
+import '../screen/login and signup/Login.dart';
 import 'drawer_items.dart';
 
 class NavigationDrawer extends StatelessWidget {
@@ -63,17 +66,28 @@ class NavigationDrawer extends StatelessWidget {
               // DrawerItem(
               //     name: 'Log out',
               //     icon: Icons.logout,
+              //
+              //
               //     onPressed: () => onItemPressed(context, index: 5)),
-              Padding(
-                padding: const EdgeInsets.only(right: 180),
-                child: Text(
-                  "Logout",
-                  style: TextStyle(
-                      color: subtext,
-                      fontSize: 21,
-                      fontWeight: FontWeight.bold),
+
+
+              GestureDetector(
+                onTap: () async{
+                  int? a=await Securestorage.removeToken();
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>testlogin()));
+                  print(a);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 180),                  child: Text(
+                    ' LogOut',
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.red,
+                        fontFamily: 'Louis George Cafe',
+                        fontWeight: FontWeight.w900),
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ),
