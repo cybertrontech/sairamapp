@@ -37,40 +37,36 @@ class _LoginpageState extends State<testlogin> {
           headers: {"Content-Type": "application/json"});
       print(response.body);
       if (response.statusCode == 200) {
-
         var data = jsonDecode(response.body);
         print(data['token']);
         try{
           int successCode=await Securestorage.storeloginId(data.toString());
           if(successCode==1){
             setState((){loading = false;});
-
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.cyan,
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.green,
                 content: Text("SUCCESS YOUR LOGIN IS SUCCESSFULL WAIT A MIN.",
                   style: TextStyle(
-                      color: Colors.black
+                      color: Colors.white
                   ),
                 )
             ));
             Future.delayed(Duration(seconds: 4),(){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomePage()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=> HomePage()));
             });
           }else{
             print("Sorry something went wrong.");
           }
         }catch(e)
     {
-
         print("the error is $e ");
     }
-
       }else{
         ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-                backgroundColor: Colors.blue,
+                backgroundColor: Colors.red,
                 content: Text("Either Wrong Username or Password.",
                   style: TextStyle(
-                      color: Colors.black
+                      color: Colors.white
                   ),
                 )));
       }
@@ -78,10 +74,10 @@ class _LoginpageState extends State<testlogin> {
       print(e.toString());
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            backgroundColor: Colors.blue,
-              content: Text("Something went wrong catch error.",
+            backgroundColor: Colors.red,
+              content: Text("Something went wrong on server please try later ",
         style: TextStyle(
-            color: Colors.black
+            color: Colors.white
         ),
       )));
     }
@@ -273,13 +269,18 @@ class _LoginpageState extends State<testlogin> {
                               height: 55,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(30)),
-                              child: Text(
-                               loading? "Load..." :"Get Started",
-                                style: TextStyle(
-                                    color: textcolor,
-                                    fontSize: 20,
-                                    fontFamily: 'Louis George Cafe',
-                                    fontWeight: FontWeight.w800),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  loading? CircularProgressIndicator(color:Colors.white):Text(
+                                    "Get Started",
+                                    style: TextStyle(
+                                        color: textcolor,
+                                        fontSize: 27,
+                                        fontFamily: 'Louis George Cafe',
+                                        fontWeight: FontWeight.w800),
+                                  ),
+                                ],
                               ),
                             ),
                             SizedBox(
@@ -289,12 +290,12 @@ class _LoginpageState extends State<testlogin> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
-                                  "Don't have an account?",
+                                  "Don't have an account ?",
                                   style: TextStyle(
                                       fontSize: 15,
                                       color: Colors.black,
                                       fontFamily: 'Louis George Cafe',
-                                      fontWeight: FontWeight.w800),
+                                      fontWeight: FontWeight.w600 ),
                                 ),
                                 GestureDetector(
                                   onTap: () {
@@ -306,21 +307,6 @@ class _LoginpageState extends State<testlogin> {
                                   },
                                   child: Text(
                                     ' Registe',
-                                    style: TextStyle(
-                                        fontSize: 15,
-                                        color: Colors.blue,
-                                        fontFamily: 'Louis George Cafe',
-                                        fontWeight: FontWeight.w900),
-                                  ),
-                                ),
-                                SizedBox(height: 12,),
-                                GestureDetector(
-                                  onTap: () async{
-                                    int? a=await Securestorage.removeToken();
-                                    print(a);
-                                  },
-                                  child: Text(
-                                    ' LogOut',
                                     style: TextStyle(
                                         fontSize: 15,
                                         color: Colors.red,

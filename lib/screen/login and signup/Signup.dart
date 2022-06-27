@@ -286,9 +286,20 @@ class _HomePageState extends State<Signup> {
                                                 fontFamily: 'Louis George Cafe',
                                                 fontWeight: FontWeight.w800),
                                           ),
+                                          SizedBox(width: 7,),
+                                          GestureDetector(
+                                            child: Text("Login In ",style: TextStyle(fontSize: 16,fontWeight:FontWeight.bold,color: Colors.red),),
+                                              onTap: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(builder: (context) =>  testlogin()),
+                                                );
+                                              }
+
+                                          )
                                         ],
-                                      ),
-                                    ],
+
+                                      ),],
                                   )),
                             ],
                           ),

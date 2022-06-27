@@ -29,16 +29,10 @@ class Securestorage{
       await storage.deleteAll();
       print(Securestorage.getToken());
       return 1;
-
     }catch(e)
     {
       print("Something is wrong");
       return 0;
     }
-
   }
-
-
-
-
  }

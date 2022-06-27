@@ -17,7 +17,6 @@ import 'package:tunesevenui/screen/Ui/seek%20bar.dart';
 import 'package:tunesevenui/screen/login%20and%20signup/Login.dart';
 import 'package:tunesevenui/screen/song%20payment/Payment%20Done.dart';
 import 'package:tunesevenui/screen/song%20payment/buying.dart';
-
 import 'Homepages/homepagealbum.dart';
 import 'Homepages/hompageartists.dart';
 import 'navigation/route_generator.dart';
