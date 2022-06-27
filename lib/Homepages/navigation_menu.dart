@@ -18,7 +18,7 @@ class NavMenu extends StatefulWidget {
 }
 
 class _NavMenuState extends State<NavMenu> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
   List<Widget> _listPages = [
     HomePage(),
     Store(),
@@ -51,11 +51,14 @@ class _NavMenuState extends State<NavMenu> {
             text: 'Artist',
           )
         ],
-        gap: 8,
+        gap: 6,
+          tabBorder: Border.all(color: Colors.black, width: 0),
         activeColor: Colors.white,
+        tabBorderRadius: 80,
+        tabActiveBorder: Border.all(color: Colors.white, width: 0.5), // tab button border
         color: Colors.white,
         backgroundColor: Colors.black,
-        tabBackgroundColor: Colors.grey.shade800,
+        tabBackgroundColor: Colors.black,
         selectedIndex: _selectedIndex,
         onTabChange: (index) {
           setState(() {

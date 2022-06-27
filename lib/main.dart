@@ -11,6 +11,7 @@ import 'package:tunesevenui/screen/Main%20Page/UnknownRoutePage.dart';
 import 'package:tunesevenui/screen/Main%20Page/get_started.dart';
 import 'package:tunesevenui/screen/Main%20Page/music%20player.dart';
 import 'package:tunesevenui/screen/Main%20Page/splash.dart';
+import 'package:tunesevenui/screen/Main%20Page/splash.dart';
 import 'package:tunesevenui/screen/Main%20Page/welcome_screen.dart';
 import 'package:tunesevenui/screen/Main%20Page/your%20library.dart';
 import 'package:tunesevenui/screen/Ui/seek%20bar.dart';
@@ -19,7 +20,9 @@ import 'package:tunesevenui/screen/song%20payment/Payment%20Done.dart';
 import 'package:tunesevenui/screen/song%20payment/buying.dart';
 import 'Homepages/homepagealbum.dart';
 import 'Homepages/hompageartists.dart';
-import 'navigation/route_generator.dart';
+import 'Homepages/navigation_menu.dart';
+import 'Route_Navigation/routes.dart';
+import 'screen/Main Page/splash.dart';
 import 'screen/login and signup/Signup.dart';
 
 
@@ -33,20 +36,25 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-         theme: ThemeData(backgroundColor: Colors.black),
-         initialRoute: "/",
-         onGenerateRoute: ourRouteGenerator,
-      home:Signup(),
-    );
+    // return MaterialApp(
+    //      theme: ThemeData(backgroundColor: Colors.black),
+    //      initialRoute: "/",
+    //      onGenerateRoute: ourRouteGenerator,
+    //   home:Discography(),
+    // );
+return GetMaterialApp(
+  // initialRoute: RoutesClass.getHomeRoute(),
+  // getPages: RoutesClass.route,
+  home: NavMenu(title: '',),
+);
 
+    //
     // return GetMaterialApp(
     //   unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoutePage()),
-    //   initialRoute: '/',
     //   getPages: [
     //     GetPage(name: '/', page: ()=> SplashScreen()),
     //     GetPage(name: '/welcome', page: ()=> WelcomeScreen()),
-    //     GetPage(name: '/login', page: ()=> Loginpage()),
+    //     GetPage(name: '/login', page: ()=> testlogin()),
     //   ],
     // );
   }

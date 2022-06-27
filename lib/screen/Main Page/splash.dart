@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import '../../Route_Navigation/routes.dart';
 import '../../images/all img.dart';
-import '../../navigation/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -22,23 +22,12 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   checkUserLoggedInStatus() async {
-    // final isLoggedIn = await SharedPref.getIsUserLoggedIn();
-    // final user = await SharedPref.getUser();
     Future.delayed(Duration(seconds: 2), () {
-      Navigator.pushNamed(context, Routes.welcomeScreen);
+      // Get.toNamed(RoutesClass.Welcome());
+      Get.offAndToNamed('/welcome');
       return;
     });
   }
-
-  // void onInit(){
-  //   checkUserLoggedInStatus();
-  // }
-  // checkUserLoggedInStatus(){
-  //   Future.delayed(Duration(seconds: 2),(){
-  //     Get.offNamed("/welcome");
-  //     return;
-  //   });
-  // }
 
 
   @override

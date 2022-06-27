@@ -83,6 +83,187 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Pasang",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
+        leading: CircleAvatar(
+          child: Image.asset(artistalbum02),
+        ),
+        title: Text(
+          "Basanta",
+          style: TextStyle(color: textcolor),
+        ),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
         trailing: Text("2:22", style: TextStyle(color: textcolor))),
   ];
   @override
@@ -90,44 +271,40 @@ class LatestList extends StatelessWidget {
     return Scaffold(
       backgroundColor: background,
       body: SingleChildScrollView(
+        physics: NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            Row(
-              children: [
-                Container(
-                  height: 50,
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0, top: 10),
-                    // child: Text(
-                    //   'Latest',
-                    //   style: TextStyle(
-                    //     color: textcolor,
-                    //     fontSize: 20,
-                    //     fontFamily: 'Louis George Cafe',
-                    //   ),
-                    // ),
-                  ),
-                ),
-              ],
-            ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child: ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  itemCount: items.length,
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                      trailing: items[index].trailing,
-                      leading: CircleAvatar(
-                        child: items[index].leading,
-                      ),
-                      title: items[index].title,
-                      subtitle: items[index].subtitle,
-                    );
-                  }),
+            // Row(
+            //   children: [
+            //     Container(
+            //       height: 80,
+            //       width: MediaQuery.of(context).size.width * 0.4,
+            //       child: Padding(
+            //         padding: const EdgeInsets.only(left: 20.0, top: 10),
+            //       ),
+            //     ),
+            //   ],
+            // ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 2),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: ListView.builder(
+                    // physics: NeverScrollableScrollPhysics(),
+                    itemCount: items.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        trailing: items[index].trailing,
+                        leading: CircleAvatar(
+                          child: items[index].leading,
+                        ),
+                        title: items[index].title,
+                        subtitle: items[index].subtitle,
+                      );
+                    }),
+              ),
             ),
           ],
         ),

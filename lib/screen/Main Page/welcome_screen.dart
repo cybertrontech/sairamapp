@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tunesevenui/images/all%20img.dart';
 
 
@@ -72,11 +73,12 @@ class WelcomeScreen extends StatelessWidget {
                 Center(
                   child: MaterialButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const GetStarted()),
-                      );
+                      Get.offAndToNamed('/get_Started');
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => const GetStarted()),
+                      // );
                     },
                     color: Colors.blue,
                     minWidth: 350,

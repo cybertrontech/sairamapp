@@ -51,7 +51,8 @@ class _LoginpageState extends State<testlogin> {
                 )
             ));
             Future.delayed(Duration(seconds: 4),(){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=> HomePage()));
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder:(context)=> HomePage()));
             });
           }else{
             print("Sorry something went wrong.");

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:tunesevenui/images/all%20img.dart';
 import 'package:tunesevenui/screen/login%20and%20signup/Login.dart';
 
@@ -147,11 +148,12 @@ class _GetStartedState extends State<GetStarted> {
                                   return;
                                 }
                               }
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>  testlogin()),
-                              );
+                              Get.offAndToNamed('/login');
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //       builder: (context) =>  testlogin()),
+                              // );
                             },
                             color: Colors.blue,
                             minWidth: 350,
