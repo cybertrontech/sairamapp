@@ -1,7 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:http/http.dart';
+import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
+
+
 import 'package:tunesevenui/Storage/secured_storage.dart';
 import '../../Homepages/home_page.dart';
 import '../../Homepages/navigation_menu.dart';
@@ -31,7 +34,7 @@ class _LoginpageState extends State<testlogin> {
         'email': emailController.text,
         'password': passwordController.text
       };
-      Response response = await post(
+       http.Response response = await http.post(
           Uri.parse('https://sairambackend.herokuapp.com/login'),
           body: jsonEncode(body),
           headers: {"Content-Type": "application/json"});
@@ -51,15 +54,17 @@ class _LoginpageState extends State<testlogin> {
                 )
             ));
             Future.delayed(Duration(seconds: 4),(){
-              Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder:(context)=> HomePage()));
+              Get.toNamed("/");
             });
           }else{
+            setState((){loading = false;});
             print("Sorry something went wrong.");
           }
         }catch(e)
     {
         print("the error is $e ");
+        setState((){loading = false;});
+
     }
       }else{
         ScaffoldMessenger.of(context).showSnackBar(
@@ -70,8 +75,12 @@ class _LoginpageState extends State<testlogin> {
                       color: Colors.white
                   ),
                 )));
+        setState((){loading = false;});
+
       }
     } catch (e) {
+      setState((){loading = false;});
+
       print(e.toString());
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -121,9 +130,9 @@ class _LoginpageState extends State<testlogin> {
                             SizedBox(height: 5),
                             Row(
                               children: [
-                                Text(
+                                const Text(
                                   "Login",
-                                  style: TextStyle(
+                                  style:const TextStyle(
                                       fontSize: 30,
                                       color: Colors.black,
                                       fontFamily: 'Louis George Cafe',

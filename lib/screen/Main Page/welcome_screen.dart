@@ -73,7 +73,7 @@ class WelcomeScreen extends StatelessWidget {
                 Center(
                   child: MaterialButton(
                     onPressed: () {
-                      Get.offAndToNamed('/get_Started');
+                      Get.offAndToNamed('/get_started');
                       // Navigator.push(
                       //   context,
                       //   MaterialPageRoute(

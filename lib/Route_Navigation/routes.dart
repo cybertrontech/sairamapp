@@ -9,10 +9,11 @@ class RoutesClass{
 
   static String start ="/";
   static String getHomeRoute()=>"/";
+
     static List<GetPage> route=[
       GetPage(name: '/', page: ()=> SplashScreen()),
       GetPage(name: '/welcome', page: ()=> WelcomeScreen()),
-      GetPage(name: '/get_Started',page: ()=> GetStarted()),
+      GetPage(name: '/get_started',page: ()=> GetStarted()),
       GetPage(name: '/login', page: ()=> testlogin()),
       // GetPage(name: '/HomePage', page: ()=>HomePage())
 
