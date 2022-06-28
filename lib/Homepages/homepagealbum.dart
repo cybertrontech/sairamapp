@@ -4,8 +4,6 @@ import 'package:get/get.dart';
 import '../colors/all colors.dart';
 import '../images/all img.dart';
 
-
-
 class albums extends StatelessWidget {
   albums({Key? key}) : super(key: key);
   final List<ListTile> items = [
@@ -90,7 +88,6 @@ class albums extends StatelessWidget {
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
         trailing: Text("2:22", style: TextStyle(color: textcolor))),
-
   ];
 
   @override
@@ -102,27 +99,6 @@ class albums extends StatelessWidget {
         child: Column(
           children: [
             // Image.asset(tune7logoweb,width: 150,height: 190,),
-
-            Row(
-              children: [
-                // Container(
-                //   height: 50,
-                //   width: MediaQuery.of(context).size.width * 0.4,
-                //   child: Padding(
-                //     padding: const EdgeInsets.only(left: 20.0, top: 10),
-                //     child: Text(
-                //       'Album',
-                //       style: TextStyle(
-                //           color: textcolor,
-                //           fontSize: 20,
-                //           fontFamily: 'Louis George Cafe',
-                //           fontWeight: FontWeight.bold
-                //       ),
-                //     ),
-                //   ),
-                // ),
-              ],
-            ),
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
@@ -146,4 +122,3 @@ class albums extends StatelessWidget {
     );
   }
 }
-

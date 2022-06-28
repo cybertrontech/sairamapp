@@ -3,53 +3,25 @@ import 'package:flutter/material.dart';
 import '../colors/all colors.dart';
 import '../images/all img.dart';
 
-
 class LatestList extends StatelessWidget {
   LatestList({Key? key}) : super(key: key);
   final List<ListTile> items = [
     ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artistalbum02),
-      ),
-      title: Text("power",
-        style: TextStyle(
-          color: textcolor,
-          fontFamily: 'Louis George Cafe',),),
-      subtitle: Text(
-        "546",
-        style: TextStyle(fontFamily: 'Louis George Cafe', color: subtext),
-      ),
-      trailing: Text("2:22", style: TextStyle(color: textcolor)),
-    ),
-    ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artistalbum02),),
-      title: Text(
-        "Dipendra",
-        style: TextStyle(color: textcolor),
-      ),
-      subtitle: Text("12345", style: TextStyle(color: subtext)),
-      trailing: Text("2:22", style: TextStyle(color: textcolor)),
-    ),
-    ListTile(
         leading: CircleAvatar(
-          child: Image.asset(artistalbum01),
+          child: Image.asset(artistalbum02),
         ),
         title: Text(
-          "Yugal",
+          "Pasang",
           style: TextStyle(color: textcolor),
         ),
-        subtitle: Text("12345", style: TextStyle(color: textcolor)),
-        trailing: Text(
-          "2:22",
-          style: TextStyle(color: textcolor),
-        )),
+        subtitle: Text("12345", style: TextStyle(color: subtext)),
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
     ListTile(
         leading: CircleAvatar(
-          child: Image.asset(artistalbum03),
+          child: Image.asset(artistalbum02),
         ),
         title: Text(
-          "Basanta",
+          "Pasang",
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
@@ -69,7 +41,7 @@ class LatestList extends StatelessWidget {
           child: Image.asset(artistalbum02),
         ),
         title: Text(
-          "Basanta",
+          "Pasang",
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
@@ -83,7 +55,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -92,7 +65,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -101,7 +75,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -110,7 +85,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -119,7 +95,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -128,7 +105,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -137,7 +115,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -146,7 +125,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -155,7 +135,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -164,7 +145,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -173,7 +155,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -182,7 +165,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -191,7 +175,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -200,7 +185,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -209,43 +195,8 @@ class LatestList extends StatelessWidget {
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
-        leading: CircleAvatar(
-          child: Image.asset(artistalbum02),
-        ),
-        title: Text(
-          "Pasang",
-          style: TextStyle(color: textcolor),
-        ),
-        subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
-        leading: CircleAvatar(
-          child: Image.asset(artistalbum02),
-        ),
-        title: Text(
-          "Pasang",
-          style: TextStyle(color: textcolor),
-        ),
-        subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
-        leading: CircleAvatar(
-          child: Image.asset(artistalbum02),
-        ),
-        title: Text(
-          "Pasang",
-          style: TextStyle(color: textcolor),
-        ),
-        subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
-        leading: CircleAvatar(
-          child: Image.asset(artistalbum02),
-        ),
-        title: Text(
-          "Pasang",
-          style: TextStyle(color: textcolor),
-        ),
-        subtitle: Text("12345", style: TextStyle(color: subtext)),
-        trailing: Text("2:22", style: TextStyle(color: textcolor))), ListTile(
+        trailing: Text("2:22", style: TextStyle(color: textcolor))),
+    ListTile(
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
@@ -275,17 +226,6 @@ class LatestList extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
-            // Row(
-            //   children: [
-            //     Container(
-            //       height: 80,
-            //       width: MediaQuery.of(context).size.width * 0.4,
-            //       child: Padding(
-            //         padding: const EdgeInsets.only(left: 20.0, top: 10),
-            //       ),
-            //     ),
-            //   ],
-            // ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 2),
               child: Container(
