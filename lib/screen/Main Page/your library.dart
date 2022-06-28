@@ -15,7 +15,28 @@ class yourlibrary extends StatelessWidget {
     ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
     ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
     ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
-    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("ampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("Rampage (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
+    ListTile(leading:CircleAvatar(child: Image.asset(MaskGrou),),title:Text("ampae (Title Track)",style: TextStyle(color: textcolor),),subtitle: Text("Rampage 2016",style: TextStyle(color:subtext,fontSize: 12),),),
 
   ];
 
@@ -26,7 +47,8 @@ class yourlibrary extends StatelessWidget {
       body: Column(
         children: [
           Image.asset(tune7logoweb,width: 110,height: 140,),
-          Container(child: Row(
+          Container(
+            child: Row(
             mainAxisAlignment:MainAxisAlignment.center,
             children: [
             Text("Your Library",style:TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
@@ -64,27 +86,29 @@ class yourlibrary extends StatelessWidget {
             padding: const EdgeInsets.only(left: 30,right: 26),
             child: Text("Here you will find music and album you have brought from our store.",style: TextStyle(color: subtext,fontWeight: FontWeight.bold),),
           ),
-         SizedBox(height: 12,),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: 410,
-            child: ListView.separated(
-              // physics: NeverScrollableScrollPhysics(),
-              itemCount: items.length,
-              separatorBuilder: (context,index){
-                final currentitems = items[index+1];
-                return ListTile(
-                  onTap: (){},
-                  leading: currentitems.leading,
-                  title: currentitems.title,
-                  subtitle:currentitems.subtitle,
-                  trailing: currentitems.trailing,
-                );
-              }, itemBuilder: (BuildContext context, int index) =>
-                Padding(
-                  padding: const EdgeInsets.only(right: 15,left: 16),
-                  child: Divider(color: Colors.white38,),
-                ),),
+         // SizedBox(height: 0,),
+          Expanded(
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 350,
+              child: ListView.separated(
+                // physics: NeverScrollableScrollPhysics(),
+                itemCount: items.length,
+                separatorBuilder: (context,index){
+                  final currentitems = items[index+1];
+                  return ListTile(
+                    onTap: (){},
+                    leading: currentitems.leading,
+                    title: currentitems.title,
+                    subtitle:currentitems.subtitle,
+                    trailing: currentitems.trailing,
+                  );
+                }, itemBuilder: (BuildContext context, int index) =>
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15,left: 16),
+                    child: Divider(color: Colors.white38,),
+                  ),),
+            ),
           ),
         ],
       ),

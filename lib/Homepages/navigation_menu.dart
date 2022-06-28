@@ -5,8 +5,8 @@ import 'package:tunesevenui/Homepages/store.dart';
 import 'package:tunesevenui/screen/Main%20Page/Main Artist.dart';
 
 
+import '../screen/Main Page/your library.dart';
 import 'home_page.dart';
-import 'library.dart';
 
 
 class NavMenu extends StatefulWidget {
@@ -22,8 +22,8 @@ class _NavMenuState extends State<NavMenu> {
   List<Widget> _listPages = [
     HomePage(),
     Store(),
-    Library(),
-    Artist(),
+    yourlibrary(),
+    artist(),
   ];
 
   @override
