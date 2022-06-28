@@ -10,8 +10,8 @@ import 'home_page.dart';
 
 
 class NavMenu extends StatefulWidget {
-  const NavMenu({Key? key, required this.title}) : super(key: key);
-  final String title;
+  // const NavMenu({Key? key, required this.title}) : super(key: key);
+  // final String title;
 
   @override
   State<NavMenu> createState() => _NavMenuState();

@@ -16,7 +16,6 @@ class Signup extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
-
 class _HomePageState extends State<Signup> {
   // Define a key to access the form
 

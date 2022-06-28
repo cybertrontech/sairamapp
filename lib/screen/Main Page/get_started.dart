@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tunesevenui/images/all%20img.dart';
 import 'package:tunesevenui/screen/login%20and%20signup/Login.dart';
-
+import '../../Route_Navigation/routes.dart';
 import '../../colors/all colors.dart';
 
 
@@ -148,7 +148,7 @@ class _GetStartedState extends State<GetStarted> {
                                   return;
                                 }
                               }
-                              Get.offAndToNamed('/login');
+                              Get.offAndToNamed(RoutesClass.login);
                               // Navigator.push(
                               //   context,
                               //   MaterialPageRoute(

@@ -4,6 +4,7 @@ import 'package:tunesevenui/Homepages/home_page.dart';
 import 'package:tunesevenui/screen/Main%20Page/MainAlbum.dart';
 import 'package:tunesevenui/screen/Main%20Page/Main Artist.dart';
 import 'package:tunesevenui/screen/Main%20Page/Discography.dart';
+
 import 'package:tunesevenui/screen/Main%20Page/My%20Playlist%20Detail.dart';
 import 'package:tunesevenui/screen/Main%20Page/My%20Playlist.dart';
 import 'package:tunesevenui/screen/Main%20Page/Playlist%20Detail%20%E2%80%93%201.dart';
@@ -44,9 +45,9 @@ class MyApp extends StatelessWidget {
     //   home:Discography(),
     // );
 return GetMaterialApp(
-  initialRoute: RoutesClass.getHomeRoute(),
+  initialRoute: RoutesClass.getHomeRoute,
   getPages: RoutesClass.route,
-  // home: NavMenu(title: '',),
+  // home: testlogin()
 );
 
     //
