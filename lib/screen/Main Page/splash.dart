@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:tunesevenui/Storage/secured_storage.dart';
 
 import '../../Route_Navigation/routes.dart';
 import '../../images/all img.dart';
@@ -17,18 +18,28 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    super.initState();
-    checkUserLoggedInStatus();
-  }
-
-  checkUserLoggedInStatus() async {
-    Future.delayed(Duration(seconds: 2), () {
-      // Get.toNamed(RoutesClass.Welcome());
-      Get.offAndToNamed('/welcome');
-      return;
+    /// Await your Future here (This function only called once after the layout is Complete)
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      print("this is the splash screen");
+      // var a = await Future.delayed(const Duration(seconds: 4));
+      String? token = await Securestorage.getToken();
+      print(token);
     });
+
+    super.initState();
   }
 
+  Future<void> checkUserLoggedInStatus() async {
+    String? token = await Securestorage.getToken();
+    if (token == null) {
+      Get.toNamed(RoutesClass.login);
+      return;
+    } else {
+      print("the token is $token");
+      Get.offAndToNamed(RoutesClass.navmenu);
+      return;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
