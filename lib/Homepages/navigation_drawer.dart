@@ -35,7 +35,7 @@ class NavigationDrawer extends StatelessWidget {
                   Get.toNamed(RoutesClass.library);
                 }),
             const SizedBox(
-              height: 5,
+              height: 6,
             ),
             DrawerItem(
                 name: 'Your Library',
