@@ -20,23 +20,19 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     /// Await your Future here (This function only called once after the layout is Complete)
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      print("this is the splash screen");
-      // var a = await Future.delayed(const Duration(seconds: 4));
-      String? token = await Securestorage.getToken();
-      print(token);
+      checkUserLoggedInStatus();
     });
 
     super.initState();
   }
 
-  Future<void> checkUserLoggedInStatus() async {
+  checkUserLoggedInStatus() async {
     String? token = await Securestorage.getToken();
     if (token == null) {
-      Get.toNamed(RoutesClass.login);
-      return;
+      Get.toNamed(RoutesClass.loginScreen);
     } else {
       print("the token is $token");
-      Get.offAndToNamed(RoutesClass.navmenu);
+      Get.offAndToNamed(RoutesClass.welcomeScreen);
       return;
     }
   }

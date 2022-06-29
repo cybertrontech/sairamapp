@@ -5,9 +5,12 @@ class Securestorage {
   static const FlutterSecureStorage storage = FlutterSecureStorage();
   static const userid = 'userid';
 
-  static Future<int> storeloginId(String loginReturnData) async {
+  static Future<int> storeloginInfo(dynamic loginReturnData) async {
     try {
-      await storage.write(key: "userid", value: loginReturnData);
+      await storage.write(key: "userid", value: loginReturnData["_id"]);
+      await storage.write(
+          key: "first_name", value: loginReturnData["first_name"]);
+      await storage.write(key: "token", value: loginReturnData["token"]);
       return 1;
     } catch (e) {
       return 0;
@@ -15,12 +18,12 @@ class Securestorage {
   }
 
   static Future<String?> getToken() async {
-    String? userid = await storage.read(key: "userid");
-    print(userid);
+    String? token = await storage.read(key: "token");
     if (userid == null) {
       return null;
     } else {
-      return userid["token"];
+      // print(userid["token"]); return "token";
+      return token;
     }
   }
 

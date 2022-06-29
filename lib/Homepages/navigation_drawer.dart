@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tunesevenui/colors/all%20colors.dart';
-import 'package:tunesevenui/screen/login%20and%20signup/Signup.dart';
-
 import '../Route_Navigation/routes.dart';
 import '../Storage/secured_storage.dart';
-import '../screen/login and signup/Login.dart';
 import 'drawer_items.dart';
 
 class NavigationDrawer extends StatelessWidget {
@@ -78,9 +75,6 @@ class NavigationDrawer extends StatelessWidget {
             GestureDetector(
               onTap: () async {
                 int? a = await Securestorage.removeToken();
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => testlogin()));
-                print(a);
               },
               child: Padding(
                 padding: const EdgeInsets.only(right: 180),

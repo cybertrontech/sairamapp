@@ -5,37 +5,36 @@ import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'package:tunesevenui/Route_Navigation/routes.dart';
 
-
 import 'package:tunesevenui/Storage/secured_storage.dart';
 import '../../Homepages/home_page.dart';
 import '../../Homepages/navigation_menu.dart';
 import '../../colors/all colors.dart';
 import '../../images/all img.dart';
-import 'Signup.dart';
+import "./register_page.dart";
 import '../../Storage/secured_storage.dart';
-class testlogin extends StatefulWidget {
 
+class testlogin extends StatefulWidget {
   @override
   State<testlogin> createState() => _LoginpageState();
 }
 
 class _LoginpageState extends State<testlogin> {
-
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool hidepassword = true;
-  bool loading =false;
-
+  bool loading = false;
 
   // This function is triggered when the user press the "Sign Up" button
   void LoginApi() async {
-    setState((){loading=true;});
+    setState(() {
+      loading = true;
+    });
     try {
       Map<String, String> body = {
         'email': emailController.text,
         'password': passwordController.text
       };
-       http.Response response = await http.post(
+      http.Response response = await http.post(
           Uri.parse('https://sairambackend.herokuapp.com/login'),
           body: jsonEncode(body),
           headers: {"Content-Type": "application/json"});
@@ -43,61 +42,62 @@ class _LoginpageState extends State<testlogin> {
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body);
         print(data['token']);
-        try{
-          int successCode=await Securestorage.storeloginId(data.toString());
-          if(successCode==1){
-            setState((){loading = false;});
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor:Colors.green,
-                content: Text("SUCCESS YOUR LOGIN IS SUCCESSFULL WAIT A MIN.",
-                  style: TextStyle(
-                      color: Colors.white
-                  ),
-                )
-            ));
-            Future.delayed(Duration(seconds: 4),(){
-              Get.offAndToNamed(RoutesClass.navmenu);
+        try {
+          int successCode = await Securestorage.storeloginInfo(data.toString());
+          if (successCode == 1) {
+            setState(() {
+              loading = false;
             });
-          }else{
-            setState((){loading = false;});
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                backgroundColor: Colors.green,
+                content: Text(
+                  "SUCCESS YOUR LOGIN IS SUCCESSFULL WAIT A MIN.",
+                  style: TextStyle(color: Colors.white),
+                )));
+            Future.delayed(Duration(seconds: 4), () {
+              Get.offAndToNamed(RoutesClass.homePageScreen);
+            });
+          } else {
+            setState(() {
+              loading = false;
+            });
             print("Sorry something went wrong.");
           }
-        }catch(e)
-    {
-        print("the error is $e ");
-        setState((){loading = false;});
-
-    }
-      }else{
-        ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-                backgroundColor: Colors.red,
-                content: Text("Either Wrong Username or Password.",
-                  style: TextStyle(
-                      color: Colors.white
-                  ),
-                )));
-        setState((){loading = false;});
-
+        } catch (e) {
+          print("the error is $e ");
+          setState(() {
+            loading = false;
+          });
+        }
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            backgroundColor: Colors.red,
+            content: Text(
+              "Either Wrong Username or Password.",
+              style: TextStyle(color: Colors.white),
+            )));
+        setState(() {
+          loading = false;
+        });
       }
     } catch (e) {
-      setState((){loading = false;});
+      setState(() {
+        loading = false;
+      });
 
       print(e.toString());
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            backgroundColor: Colors.red,
-              content: Text("Something went wrong on server please try later ",
-        style: TextStyle(
-            color: Colors.white
-        ),
-      )));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.red,
+          content: Text(
+            "Something went wrong on server please try later ",
+            style: TextStyle(color: Colors.white),
+          )));
     }
   }
 
-  final formKey=GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
 
-
-///Securestorage
+  ///Securestorage
   final storage = new FlutterSecureStorage();
 
   @override
@@ -133,7 +133,7 @@ class _LoginpageState extends State<testlogin> {
                               children: [
                                 const Text(
                                   "Login",
-                                  style:const TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 30,
                                       color: Colors.black,
                                       fontFamily: 'Louis George Cafe',
@@ -148,19 +148,21 @@ class _LoginpageState extends State<testlogin> {
                                 child: Column(
                                   children: [
                                     TextFormField(
-                                      keyboardType: TextInputType.emailAddress,// maxLength: 10,
+                                      keyboardType: TextInputType
+                                          .emailAddress, // maxLength: 10,
                                       autofocus: true,
                                       maxLines: 1,
                                       controller: emailController,
                                       textInputAction: TextInputAction.next,
-                                      decoration:  InputDecoration(
+                                      decoration: InputDecoration(
                                           border: OutlineInputBorder(
-                                            borderRadius: BorderRadius.circular(14)
-                                          ),
+                                              borderRadius:
+                                                  BorderRadius.circular(14)),
                                           prefixIcon: Icon(Icons.email),
                                           labelText: 'Email'),
                                       validator: (value) {
-                                        if (value == null || value.trim().isEmpty) {
+                                        if (value == null ||
+                                            value.trim().isEmpty) {
                                           return 'Please enter your email address';
                                         }
                                         // Check if the entered email has the right format
@@ -175,25 +177,31 @@ class _LoginpageState extends State<testlogin> {
                                     SizedBox(
                                       height: 15,
                                     ),
+
                                     ///password
                                     TextFormField(
-                                      keyboardType: TextInputType.visiblePassword,
+                                      keyboardType:
+                                          TextInputType.visiblePassword,
                                       controller: passwordController,
                                       decoration: InputDecoration(
                                           border: OutlineInputBorder(
-                                              borderRadius: BorderRadius.circular(14)
-                                          ),
+                                              borderRadius:
+                                                  BorderRadius.circular(14)),
                                           prefixIcon: Icon(Icons.lock),
                                           suffixIcon: GestureDetector(
-                                              onTap:(){
-                                                hidepassword=!hidepassword;
-                                                setState((){});
+                                              onTap: () {
+                                                hidepassword = !hidepassword;
+                                                setState(() {});
                                               },
-                                              child: Icon(hidepassword==true?Icons.visibility:Icons.visibility_off_outlined)),
+                                              child: Icon(hidepassword == true
+                                                  ? Icons.visibility
+                                                  : Icons
+                                                      .visibility_off_outlined)),
                                           labelText: 'Password'),
                                       obscureText: hidepassword,
                                       validator: (value) {
-                                        if (value == null || value.trim().isEmpty) {
+                                        if (value == null ||
+                                            value.trim().isEmpty) {
                                           return 'This field is required';
                                         }
                                         if (value.trim().length < 4) {
@@ -264,12 +272,13 @@ class _LoginpageState extends State<testlogin> {
                               height: 20,
                             ),
                             MaterialButton(
-                              onPressed: ()async{
+                              onPressed: () async {
                                 print("Clicked");
-                                if (formKey.currentState!=null){
+                                if (formKey.currentState != null) {
                                   formKey.currentState!.save();
-                                  final isValid= formKey.currentState!.validate();
-                                  if(!isValid){
+                                  final isValid =
+                                      formKey.currentState!.validate();
+                                  if (!isValid) {
                                     return;
                                   }
                                   LoginApi();
@@ -283,14 +292,17 @@ class _LoginpageState extends State<testlogin> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  loading? CircularProgressIndicator(color:Colors.white):Text(
-                                    "Get Started",
-                                    style: TextStyle(
-                                        color: textcolor,
-                                        fontSize: 27,
-                                        fontFamily: 'Louis George Cafe',
-                                        fontWeight: FontWeight.w800),
-                                  ),
+                                  loading
+                                      ? CircularProgressIndicator(
+                                          color: Colors.white)
+                                      : Text(
+                                          "Get Started",
+                                          style: TextStyle(
+                                              color: textcolor,
+                                              fontSize: 27,
+                                              fontFamily: 'Louis George Cafe',
+                                              fontWeight: FontWeight.w800),
+                                        ),
                                 ],
                               ),
                             ),
@@ -306,11 +318,11 @@ class _LoginpageState extends State<testlogin> {
                                       fontSize: 15,
                                       color: Colors.black,
                                       fontFamily: 'Louis George Cafe',
-                                      fontWeight: FontWeight.w600 ),
+                                      fontWeight: FontWeight.w600),
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    Get.toNamed(RoutesClass.register);
+                                    Get.toNamed(RoutesClass.registerScreen);
                                   },
                                   child: Text(
                                     ' Registe',

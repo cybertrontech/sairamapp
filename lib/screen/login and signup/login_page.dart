@@ -39,9 +39,8 @@ class _LoginpageState extends State<testlogin> {
       print(response.body);
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body);
-        print(data['token']);
         try {
-          int successCode = await Securestorage.storeloginId(data.toString());
+          int successCode = await Securestorage.storeloginInfo(data);
           if (successCode == 1) {
             setState(() {
               loading = false;
