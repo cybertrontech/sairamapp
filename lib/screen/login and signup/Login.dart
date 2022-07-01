@@ -7,7 +7,7 @@ import 'package:tunesevenui/Route_Navigation/routes.dart';
 
 
 import 'package:tunesevenui/Storage/secured_storage.dart';
-import '../../Homepages/home_page.dart';
+import '../../Homepages/Home_Page.dart';
 import '../../Homepages/navigation_menu.dart';
 import '../../colors/all colors.dart';
 import '../../images/all img.dart';

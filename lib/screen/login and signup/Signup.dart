@@ -4,7 +4,7 @@ import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:http/http.dart';
 import 'package:tunesevenui/screen/login%20and%20signup/Login.dart';
 import 'package:http/http.dart' as http;
-import '../../Homepages/home_page.dart';
+import '../../Homepages/Home_Page.dart';
 import '../../Homepages/navigation_menu.dart';
 import '../../colors/all colors.dart';
 import '../../images/all img.dart';

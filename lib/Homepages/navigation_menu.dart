@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:tunesevenui/Homepages/hompageartists.dart';
-import 'package:tunesevenui/Homepages/store.dart';
+import 'package:tunesevenui/Homepages/Store.dart';
 import 'package:tunesevenui/screen/Main%20Page/Main Artist.dart';
 
 
 import '../screen/Main Page/your library.dart';
-import 'home_page.dart';
+import 'Home_Page.dart';
 
 
 class NavMenu extends StatefulWidget {

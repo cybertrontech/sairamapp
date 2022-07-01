@@ -19,114 +19,6 @@ class artist extends StatelessWidget {
     ),
     ListTile(
       leading: CircleAvatar(
-        child: Image.asset(artistalbum01),
-      ),
-      title: Text(
-        "Uniq Poet",
-        style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),
-      ),
-    ),
-    ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artistalbum02),
-      ),
-      title: Text(
-        "Balen Shah",
-        style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),
-      ),
-    ),
-    ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artistalbum03),
-      ),
-      title: Text(
-        "The Pitchbenders",
-        style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),
-      ),
-    ),
-    ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artist123),
-      ),
-      title: Text(
-        "The Underside",
-        style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),
-      ),
-    ),
-    ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artistalbum03),
-      ),
-      title: Text(
-        "The Rain Dance",
-        style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),
-      ),
-    ),
-    ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artistalbum01),
-      ),
-      title: Text(
-        "Uniq Poet",
-        style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),
-      ),
-    ),
-    ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artistalbum02),
-      ),
-      title: Text(
-        "Balen Shah",
-        style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),
-      ),
-    ),
-    ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artistalbum03),
-      ),
-      title: Text(
-        "The Pitchbenders",
-        style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),
-      ),
-    ),
-    ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artist123),
-      ),
-      title: Text(
-        "The Underside",
-        style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),
-      ),
-    ),
-    ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artistalbum03),
-      ),
-      title: Text(
-        "The Rain Dance",
-        style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),
-      ),
-    ),
-    ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artistalbum01),
-      ),
-      title: Text(
-        "Uniq Poet",
-        style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),
-      ),
-    ),
-    ListTile(
-      leading: CircleAvatar(
-        child: Image.asset(artistalbum02),
-      ),
-      title: Text(
-        "Balen Shah",
-        style: TextStyle(color: textcolor, fontWeight: FontWeight.bold),
-      ),
-    ),
-    ListTile(
-      leading: CircleAvatar(
         child: Image.asset(artistalbum03),
       ),
       title: Text(
@@ -226,7 +118,7 @@ class artist extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return ListTile(
                       onTap: () {
-                        Get.toNamed(RoutesClass.particular_artist);
+                        Get.toNamed(RoutesClass.artistsdetails);
                       },
                       trailing: items[index].trailing,
                       leading: CircleAvatar(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tunesevenui/Homepages/home_page.dart';
+import 'package:tunesevenui/Homepages/Home_Page.dart';
 import 'package:tunesevenui/screen/Main%20Page/MainAlbum.dart';
 import 'package:tunesevenui/screen/Main%20Page/Main Artist.dart';
 import 'package:tunesevenui/screen/Main%20Page/Discography.dart';
@@ -27,7 +27,6 @@ import 'Route_Navigation/routes.dart';
 import 'screen/Main Page/splash.dart';
 import 'screen/login and signup/Signup.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -38,26 +37,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // return MaterialApp(
-    //      theme: ThemeData(backgroundColor: Colors.black),
-    //      initialRoute: "/",
-    //      onGenerateRoute: ourRouteGenerator,
-    //   home:Discography(),
-    // );
-return GetMaterialApp(
-  initialRoute: RoutesClass.getHomeRoute,
-  getPages: RoutesClass.route,
-  // home: testlogin()
-);
-
-    //
-    // return GetMaterialApp(
-    //   unknownRoute: GetPage(name: '/notfound', page: () => UnknownRoutePage()),
-    //   getPages: [
-    //     GetPage(name: '/', page: ()=> SplashScreen()),
-    //     GetPage(name: '/welcome', page: ()=> WelcomeScreen()),
-    //     GetPage(name: '/login', page: ()=> testlogin()),
-    //   ],
-    // );
+    return GetMaterialApp(
+      initialRoute: RoutesClass.getHomeRoute,
+      getPages: RoutesClass.route,
+      // home: musicplayer());
+    );
   }
 }

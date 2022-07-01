@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:tunesevenui/Homepages/store.dart';
 import 'package:tunesevenui/images/all%20img.dart';
 import '../colors/all colors.dart';
 import '../screen/Main Page/MainAlbum.dart';
 import 'homepagealbum.dart';
+import 'Navigation_Drawer.dart';
+import 'Store.dart';
 import 'latest.dart';
-import 'navigation_drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
