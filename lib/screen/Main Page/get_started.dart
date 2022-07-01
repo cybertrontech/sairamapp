@@ -147,7 +147,7 @@ class _GetStartedState extends State<GetStarted> {
                               return;
                             }
                           }
-                          Get.offAndToNamed(RoutesClass.login);
+                          Get.offAndToNamed(RoutesClass.loginpage);
                         },
                         color: Colors.blue,
                         minWidth: 350,

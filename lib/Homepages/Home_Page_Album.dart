@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../Route_Navigation/routes.dart';
 import 'Home_Page.dart';
 
 import '../colors/all colors.dart';
@@ -23,7 +24,7 @@ class albums extends StatelessWidget {
         "12345",
         style: TextStyle(fontFamily: 'Louis George Cafe', color: subtext),
       ),
-      trailing: Text("2:22", style: TextStyle(color: textcolor)),
+      trailing: Text("free", style: TextStyle(color: textcolor)),
     ),
     ListTile(
       leading: CircleAvatar(
@@ -34,7 +35,7 @@ class albums extends StatelessWidget {
         style: TextStyle(color: textcolor),
       ),
       subtitle: Text("12345", style: TextStyle(color: subtext)),
-      trailing: Text("2:22", style: TextStyle(color: textcolor)),
+      trailing: Text("paid", style: TextStyle(color: textcolor)),
     ),
     ListTile(
         leading: CircleAvatar(
@@ -108,6 +109,7 @@ class albums extends StatelessWidget {
                   itemCount: items.length,
                   itemBuilder: (context, index) {
                     return ListTile(
+                      onTap: (){ Get.toNamed(RoutesClass.paidsong);},
                       trailing: items[index].trailing,
                       leading: CircleAvatar(
                         child: items[index].leading,

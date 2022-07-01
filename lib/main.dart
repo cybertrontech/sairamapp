@@ -20,8 +20,8 @@ import 'package:tunesevenui/screen/login%20and%20signup/Login.dart';
 
 import 'package:tunesevenui/screen/song%20payment/Payment%20Done.dart';
 import 'package:tunesevenui/screen/song%20payment/buying.dart';
-import 'Homepages/homepagealbum.dart';
-import 'Homepages/hompageartists.dart';
+import 'Homepages/Home_Page_Album.dart';
+import 'Homepages/Home_Page_Artists.dart';
 import 'Homepages/navigation_menu.dart';
 import 'Route_Navigation/routes.dart';
 import 'screen/Main Page/splash.dart';

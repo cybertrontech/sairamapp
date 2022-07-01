@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:tunesevenui/Homepages/hompageartists.dart';
-import 'package:tunesevenui/Homepages/Store.dart';
+import 'package:tunesevenui/Homepages/Home_Page_Artists.dart';
+import 'package:tunesevenui/Homepages/Home_Page_Store.dart';
 import 'package:tunesevenui/screen/Main%20Page/Main Artist.dart';
 
 

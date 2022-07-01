@@ -13,13 +13,13 @@ import '../../colors/all colors.dart';
 import '../../images/all img.dart';
 import 'Signup.dart';
 import '../../Storage/secured_storage.dart';
-class testlogin extends StatefulWidget {
+class login extends StatefulWidget {
 
   @override
-  State<testlogin> createState() => _LoginpageState();
+  State<login> createState() => _LoginpageState();
 }
 
-class _LoginpageState extends State<testlogin> {
+class _LoginpageState extends State<login> {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -65,7 +65,6 @@ class _LoginpageState extends State<testlogin> {
     {
         print("the error is $e ");
         setState((){loading = false;});
-
     }
       }else{
         ScaffoldMessenger.of(context).showSnackBar(

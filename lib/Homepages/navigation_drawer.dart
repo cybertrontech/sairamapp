@@ -79,7 +79,7 @@ class NavigationDrawer extends StatelessWidget {
               onTap: () async {
                 int? a = await Securestorage.removeToken();
                 Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => testlogin()));
+                    MaterialPageRoute(builder: (context) => login()));
                 print(a);
               },
               child: Padding(

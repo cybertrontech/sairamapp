@@ -79,9 +79,7 @@ class _DiscographyState extends State<Discography> {
                   ],
                 ),
               ),
-
               SizedBox(height: 20,),
-
               ///Discography
               Padding(
                 padding: const EdgeInsets.only(right: 270),
@@ -104,7 +102,6 @@ class _DiscographyState extends State<Discography> {
                 ),
               ),
               ///Discography
-
               SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -265,166 +262,6 @@ class _DiscographyState extends State<Discography> {
                   ),
                 ),
               ),
-              // Padding(
-              //   padding: const EdgeInsets.all(10.0),
-              //   child: Container(
-              //     child: SizedBox(
-              //       height: 205.0,
-              //       child: ListView(
-              //         scrollDirection: Axis.horizontal,
-              //         children: <Widget>[
-              //           Container(
-              //             width: 160.0,
-              //             color: Colors.black,
-              //             child: Column(
-              //               children: [
-              //                 Container(
-              //                   decoration: BoxDecoration(
-              //                       shape:BoxShape.circle
-              //                   ),
-              //                   child: Image.asset(artistalbum01),),
-              //                 SizedBox(height: 7,),
-              //                 Text("Funeral",
-              //                     style:TextStyle(
-              //                         decoration: TextDecoration.none,
-              //                         fontSize: 15,
-              //                         color: textcolor,
-              //                         fontWeight: FontWeight.bold
-              //
-              //                     )),
-              //                 SizedBox(height: 5,),
-              //                 Text("2016",
-              //                     style:TextStyle(
-              //                       decoration: TextDecoration.none,
-              //                       fontSize: 10,
-              //                       color: subtext,
-              //                     ))
-              //               ],
-              //             ),
-              //           ),
-              //           SizedBox(width: 10,),
-              //           Container(
-              //             width: 160.0,
-              //             color: Colors.black,
-              //             child: Column(
-              //               children: [
-              //                 Container(
-              //                   decoration: BoxDecoration(
-              //                       shape:BoxShape.circle
-              //                   ),
-              //                   child: Image.asset(artistalbum02),),
-              //                 SizedBox(height: 7,),
-              //                 Text("Jumanji",
-              //                     style:TextStyle(
-              //                         decoration: TextDecoration.none,
-              //                         fontSize: 15,
-              //                         color: textcolor,
-              //                         fontWeight: FontWeight.bold
-              //                     )),
-              //                 SizedBox(height: 5,),
-              //                 Text("2019",
-              //                     style:TextStyle(
-              //                       decoration: TextDecoration.none,
-              //                       fontSize: 10,
-              //                       color: subtext,
-              //                     ))
-              //               ],
-              //             ),
-              //           ),
-              //           SizedBox(width: 10,),
-              //           Container(
-              //             width: 160.0,
-              //             color: Colors.black,
-              //             child: Column(
-              //               children: [
-              //                 Container(
-              //                   decoration: BoxDecoration(
-              //                       shape:BoxShape.circle
-              //                   ),
-              //                   child: Image.asset(artistalbum03),),
-              //                 SizedBox(height: 7,),
-              //                 Text("G.l. Jeo",
-              //                     style:TextStyle(
-              //                         decoration: TextDecoration.none,
-              //                         fontSize: 15,
-              //                         color: textcolor,
-              //                         fontWeight: FontWeight.bold
-              //                     )),
-              //                 SizedBox(height: 5,),
-              //                 Text("2014",
-              //                     style:TextStyle(
-              //                       decoration: TextDecoration.none,
-              //                       fontSize: 10,
-              //                       color: subtext,
-              //                     ))
-              //               ],
-              //             ),
-              //           ),
-              //           SizedBox(width: 10,),
-              //           Container(
-              //             width: 160.0,
-              //             color: Colors.black,
-              //             child: Column(
-              //               children: [
-              //                 Container(
-              //                   decoration: BoxDecoration(
-              //                       shape:BoxShape.circle
-              //                   ),
-              //                   child: Image.asset(artistalbum01),),
-              //                 SizedBox(height: 7,),
-              //                 Text("Funeral",
-              //                     style:TextStyle(
-              //                         decoration: TextDecoration.none,
-              //                         fontSize: 15,
-              //                         color: textcolor,
-              //                         fontWeight: FontWeight.bold
-              //                     )),
-              //                 SizedBox(height: 5,),
-              //                 Text("2016",
-              //                     style:TextStyle(
-              //                       decoration: TextDecoration.none,
-              //                       fontSize: 10,
-              //                       color: subtext,
-              //                     ))
-              //               ],
-              //             ),
-              //           ),
-              //           SizedBox(width: 10,),
-              //           Container(
-              //             width: 160.0,
-              //             color: Colors.black,
-              //             child: Column(
-              //               children: [
-              //                 Container(
-              //                   decoration: BoxDecoration(
-              //                       shape:BoxShape.circle
-              //                   ),
-              //                   child: Image.asset(artistalbum01),),
-              //                 SizedBox(height: 7,),
-              //                 Text("Funeral",
-              //                     style:TextStyle(
-              //                         decoration: TextDecoration.none,
-              //                         fontSize: 15,
-              //                         color: textcolor,
-              //                         fontWeight: FontWeight.bold
-              //                     )),
-              //                 SizedBox(height: 5,),
-              //                 Text("2016",
-              //                     style:TextStyle(
-              //                       decoration: TextDecoration.none,
-              //                       fontSize: 10,
-              //                       color: subtext,
-              //                     ))
-              //               ],
-              //             ),
-              //           ),
-              //           SizedBox(width: 10,),
-              //         ],
-              //       ),
-              //     ),
-              //   ),
-              // ),
-
               ///Uploads
               Padding(
                 padding: const EdgeInsets.only(right: 320),
@@ -448,6 +285,7 @@ class _DiscographyState extends State<Discography> {
               ),
               SizedBox(height: 18,),
               ///Uploads
+
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
