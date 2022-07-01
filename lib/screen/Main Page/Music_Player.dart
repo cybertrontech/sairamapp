@@ -7,13 +7,13 @@ import '../Ui/Dialog.dart';
 import '../Ui/seek bar.dart';
 
 
-class musicplayer extends StatefulWidget {
-  const musicplayer({Key? key}) : super(key: key);
+class Music_Player extends StatefulWidget {
+  const Music_Player({Key? key}) : super(key: key);
 
   @override
-  State<musicplayer> createState() => _musicplayerState();
+  State<Music_Player> createState() => _Music_PlayerState();
 }
-class _musicplayerState extends State<musicplayer> {
+class _Music_PlayerState extends State<Music_Player> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

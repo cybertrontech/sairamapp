@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tunesevenui/images/all%20img.dart';
 import 'package:get/route_manager.dart';
-import '../../colors/all colors.dart';
-import 'get_started.dart';
+import '../../../colors/all colors.dart';
+import 'Get_Started.dart';
 import 'package:tunesevenui/Route_Navigation/routes.dart';
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:rounded_linear_progress/rounded_linear_progress.dart';
+import 'package:tunesevenui/Route_Navigation/routes.dart';
 import 'package:tunesevenui/colors/all%20colors.dart';
 
-import '../../images/all img.dart';
+import '../../../Route_Navigation/routes.dart';
+import '../../../images/all img.dart';
 
 class Artist extends StatelessWidget {
   final List<ListTile> items = [
@@ -378,7 +382,7 @@ class Artist extends StatelessWidget {
                     separatorBuilder: (context, index) {
                       final currentitems = items[index + 1];
                       return ListTile(
-                        onTap: () {},
+                        onTap: () {Get.toNamed(RoutesClass.artistsdetails);},
                         leading: currentitems.leading,
                         title: currentitems.title,
                         subtitle: currentitems.subtitle,

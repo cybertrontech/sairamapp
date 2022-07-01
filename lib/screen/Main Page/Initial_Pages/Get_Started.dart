@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tunesevenui/images/all%20img.dart';
-import 'package:tunesevenui/screen/login%20and%20signup/Login.dart';
-import '../../Route_Navigation/routes.dart';
-import '../../colors/all colors.dart';
+import '../../../Route_Navigation/routes.dart';
+import '../../../colors/all colors.dart';
 
 class GetStarted extends StatefulWidget {
   const GetStarted({Key? key}) : super(key: key);

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rounded_linear_progress/rounded_linear_progress.dart';
 import 'package:tunesevenui/colors/all%20colors.dart';
 
-import '../../images/all img.dart';
+import '../images/all img.dart';
 
 class yourlibrary extends StatelessWidget {
   final List<ListTile> items = [

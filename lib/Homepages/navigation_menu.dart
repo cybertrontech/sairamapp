@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:tunesevenui/Homepages/Home_Page_Artists.dart';
 import 'package:tunesevenui/Homepages/Home_Page_Store.dart';
-import 'package:tunesevenui/screen/Main%20Page/Main Artist.dart';
 
 
-import '../screen/Main Page/your library.dart';
+import 'Home_Page_Library.dart';
 import 'Home_Page.dart';
 
 

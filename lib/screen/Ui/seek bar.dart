@@ -22,7 +22,7 @@ class HomeWidget extends StatefulWidget {
 
 class _HomeWidgetState extends State<HomeWidget> {
   late AudioPlayer _player;
-  final url = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3';
+  final url = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3';
   late Stream<DurationState> _durationState;
   var _isShowingWidgetOutline = false;
   var _labelLocation = TimeLabelLocation.below;
@@ -76,7 +76,7 @@ class _HomeWidgetState extends State<HomeWidget> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              const SizedBox(height: 10),
+              const SizedBox(height: 500),
               Container(
                 // decoration: _widgetBorder(),
                 child: _progressBar(),
@@ -162,6 +162,9 @@ class _HomeWidgetState extends State<HomeWidget> {
         }
       },
     );
+
+
+
   }
 }
 

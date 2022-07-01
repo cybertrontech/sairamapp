@@ -33,22 +33,32 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
+
+  #UI Package
   cupertino_icons: ^1.0.2
   flutter_advanced_drawer: ^1.3.2
   card_swiper : ^2.0.1
-
   rounded_linear_progress: ^0.0.2
   flutter_animated_dialog: ^2.0.1
   audio_video_progress_bar: ^0.10.0
-  just_audio: ^0.9.24
-  rxdart: ^0.27.4
   google_nav_bar: ^5.0.6
   carousel_slider: ^4.0.0
   hexcolor: ^2.0.7
   flutter_svg: ^1.1.0
+  seekbar: ^0.0.2
+
+  #Music Player UI
+  just_audio: ^0.9.27
+  audio_service: ^0.18.6
+  rxdart: ^0.27.4
+
+
+  #Server Package
   get: ^4.6.5
-  shared_preferences: ^2.0.15
   http: ^0.13.4
+
+
+  #Storage Package
   flutter_secure_storage: ^5.0.2
 
 

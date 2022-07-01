@@ -9,8 +9,11 @@ class LatestList extends StatelessWidget {
   LatestList({Key? key}) : super(key: key);
   final List<ListTile> items = [
     ListTile(
+        onTap: () {
+          Get.toNamed(RoutesClass.musicplayers);},
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
+
         ),
         title: Text(
           "Pasang",
@@ -19,11 +22,13 @@ class LatestList extends StatelessWidget {
         subtitle: Text("12345", style: TextStyle(color: subtext)),
         trailing: Text("Free", style: TextStyle(color: textcolor))),
     ListTile(
+        onTap: () {
+          Get.toNamed(RoutesClass.paidsong);},
         leading: CircleAvatar(
           child: Image.asset(artistalbum02),
         ),
         title: Text(
-          "Pasang",
+          "balan",
           style: TextStyle(color: textcolor),
         ),
         subtitle: Text("12345", style: TextStyle(color: subtext)),
@@ -59,9 +64,7 @@ class LatestList extends StatelessWidget {
                     itemBuilder: (context, index) {
                       return ListTile(
                         onTap: () {
-                          Get.toNamed(RoutesClass.musicplayers);
-                          return print("press");
-                        },
+                        Get.toNamed(RoutesClass.musicplayers);},
                         trailing: items[index].trailing,
                         leading: items[index].leading,
                         title: items[index].title,

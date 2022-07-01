@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:rounded_linear_progress/rounded_linear_progress.dart';
 
-import '../../colors/all colors.dart';
-import '../../images/all img.dart';
+import '../../../colors/all colors.dart';
+import '../../../images/all img.dart';
 
 
 
-class Discography extends StatefulWidget {
+class Artist_Page extends StatefulWidget {
 
   @override
-  State<Discography> createState() => _DiscographyState();
+  State<Artist_Page> createState() => _Artist_PageState();
 }
-class _DiscographyState extends State<Discography> {
+class _Artist_PageState extends State<Artist_Page> {
   final List<ListTile> items =[
     ListTile(leading:CircleAvatar(child: Image.asset(artistalbum03),),title:Text("Kripas",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color: subtext,),),
     ListTile(leading:CircleAvatar(child: Image.asset(artistalbum01),),title:Text("Dipendra",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color:subtext,),),
     ListTile(leading:CircleAvatar(child: Image.asset(artistalbum02),),title:Text("Yugal",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color: subtext,),),
     ListTile(leading:CircleAvatar(child: Image.asset(artistalbum03),),title:Text("Basanta",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color: subtext,),),
-    ListTile(leading:CircleAvatar(child: Image.asset(artist123),),title:Text("Pasang",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color:subtext,),),
     ListTile(leading:CircleAvatar(child: Image.asset(artistalbum03),),title:Text("Basanta",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color: subtext,),),
     ListTile(leading:CircleAvatar(child: Image.asset(artistalbum03),),title:Text("Basanta",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color: subtext,),),
     ListTile(leading:CircleAvatar(child: Image.asset(artistalbum03),),title:Text("Basanta",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color: subtext,),),
-    ListTile(leading:CircleAvatar(child: Image.asset(artistalbum03),),title:Text("Basanta",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color: subtext,),),
-    ListTile(leading:CircleAvatar(child: Image.asset(artistalbum03),),title:Text("Basanta",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color: subtext,),),
-    ListTile(leading:CircleAvatar(child: Image.asset(artist123),),title:Text("Pasang",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color:subtext,),),
     ListTile(leading:CircleAvatar(child: Image.asset(artist123),),title:Text("Pasang",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color:subtext,),),
     ListTile(leading:CircleAvatar(child: Image.asset(artist123),),title:Text("Pasang",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color:subtext,),),
     ListTile(leading:CircleAvatar(child: Image.asset(artist123),),title:Text("Pasang",style: TextStyle(color: textcolor),),subtitle: Text("2010",style: TextStyle(color:subtext,fontSize: 12),),trailing: Icon(Icons.my_library_music,color:subtext,),),
